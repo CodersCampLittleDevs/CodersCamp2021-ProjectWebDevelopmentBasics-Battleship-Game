@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+$base-font-color: #fff;
+$btn-color: #243c60;
+$bgc-color: rgba(0, 0, 0, 0.45);
+$btn-color-hover: #051e42;
+$base-font-family: "Lato", sans-serif;
+$bg-url: url("./bg.png");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $base-font-color;
+  font-family: $base-font-family;
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  background-image: $bg-url;
+
+  &__main {
+    background-color: $bgc-color;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+.timer {
+  position: absolute;
+  top: 5%;
+  &__counter {
+    font-size: 48px;
+    font-weight: bold;
+  }
+}
+.gameBoard {
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  &__player {
+    position: absolute;
+    top: 10%;
+
+    &-name {
+      font-size: 40px;
+    }
+  }
+
+  &__board {
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+    &-fieldsWrapper {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &-field {
+      height: 10%;
+      width: 10%;
+      border: 1px solid black;
+      &:nth-child(-n + 10) {
+        border-top: none;
+      }
+
+      &:nth-child(10n) {
+        border-right: none;
+      }
+
+      &:nth-child(10n + 1) {
+        border-left: none;
+      }
+
+      &:nth-child(n + 91) {
+        border-bottom: none;
+      }
+    }
+  }
+  &__RandomizeButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 25%;
+    width: 85%;
+    background-color: $btn-color;
+    border: none;
+    border-radius: 15px;
+    font-size: 48px;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+      background-color: $btn-color-hover;
+    }
+  }
+  &__charactersWrapper {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    left: -40px;
+    display: flex;
+    flex-direction: column;
+
+    &-char {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__numbersWrapper {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: -40px;
+    display: flex;
+
+    &-numb {
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  }
+
+  &__shipsWrapper {
+    position: absolute;
+    bottom: 5%;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+
+    &-ships {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-items: end;
+    }
+
+    &-ship {
+      background-color: $base-font-color;
+      height: 25px;
+      margin: 5px 10px 5px 0;
+    }
+
+    &__heading {
+      font-weight: 700;
+    }
+  }
+}
+
+.homaPageButton {
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  position: absolute;
+  right: 5%;
+  bottom: 3%;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

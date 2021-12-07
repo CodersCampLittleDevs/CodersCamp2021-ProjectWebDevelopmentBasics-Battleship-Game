@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="wrapper__main">
+            <div class="timer">
+                <span class="timer__counter">10:00</span>
+            </div>
+            <div class="gameBoard__wrapper">
+                <div class="gameBoard__player">
+                    <h1 class="gameBoard__player-name player">Player</h1>
+                </div>
+                <div class="gameBoard__board">
+                    <button class="gameBoard__RandomizeButton">Randomize</button>
+                    <div class="gameBoard__board-fieldsWrapper"></div>
+                    <div class="gameBoard__charactersWrapper"></div>
+                    <div class="gameBoard__numbersWrapper"></div>
+                </div>
+                <div class="gameBoard__shipsWrapper">
+                    <h1 class="gameBoard__heading">Ships left:</h1>
+                    <div class="gameBoard__shipsWrapper-ships"></div>
+                </div>
+            </div>
+            <div class="gameBoard__wrapper">
+                <div class="gameBoard__player">
+                    <h1 class="gameBoard__player-name">Computer</h1>
+                </div>
+                <div class="gameBoard__board">
+                    <div class="gameBoard__board-fieldsWrapper"></div>
+                    <div class="gameBoard__charactersWrapper"></div>
+                    <div class="gameBoard__numbersWrapper"></div>
+                </div>
+                <div class="gameBoard__shipsWrapper">
+                    <h1 class="gameBoard__heading">Ships left:</h1>
+                    <div class="gameBoard__shipsWrapper-ships"></div>
+                </div>
+            </div>
+            <button class="homaPageButton">Return</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
