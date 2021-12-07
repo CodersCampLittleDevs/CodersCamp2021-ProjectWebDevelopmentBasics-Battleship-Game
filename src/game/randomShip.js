@@ -16,8 +16,6 @@ let arrayOfShips5 = [[5,1],
 function randomBoard(board, arrayOfShips) {
 
   arrayOfShips.forEach(i => {
-console.log(i);
-
     for(let j = 0; j < i[1]; j++){
       goodShip(board,i[0]);
     }
@@ -31,8 +29,9 @@ function goodShip(board,numOfMast) {
   let i = 0;
   let ship = [];
   let boardCh = [];
-  do {
-    i=0;
+
+
+  while (i <= numOfMast) {
     boardCh = board;
     ship = createShip(numOfMast);
     ship.forEach(j => {
@@ -40,10 +39,9 @@ function goodShip(board,numOfMast) {
             ++i;
           }
         })
-        if( i == numOfMast ){
-          break;
-        }
-  } while (i < numOfMast);
+  } 
+
+
   ship.forEach(j => {
     allPlaceRoundShip(j,boardCh)
   })
