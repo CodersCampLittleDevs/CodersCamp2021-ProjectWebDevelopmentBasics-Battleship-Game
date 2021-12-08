@@ -3,10 +3,16 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
-  entry: "./src/app/App.js",
+  entry: {
+    index: path.resolve(__dirname, "./src/app/App.js"),
+    main: path.resolve(__dirname, "./src/main/main.js"),
+    settings: path.resolve(__dirname, "./src/settings/settings.js"),
+    game: path.resolve(__dirname, "./src/game/game.js"),
+    authors: path.resolve(__dirname, "./src/authors/authors.js"),
+    highscores: path.resolve(__dirname, "./src/highscores/highscores.js"),
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "App.js",
   },
 
   mode: "development",
@@ -41,11 +47,40 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      templateContent: ({ htmlWebpackPlugin }) =>
-        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' +
-        "Battleship" +
-        '</title></head><body><div id="app"></div></body></html>',
+      template: "./src/index.html",
       filename: "index.html",
+      inject: "body",
+      chunks: ["index"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/settings/settings.html",
+      filename: "settings.html",
+      inject: "body",
+      chunks: ["settings"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/main/main.html",
+      filename: "main.html",
+      inject: "body",
+      chunks: ["main"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/highscores/highscores.html",
+      filename: "highscores.html",
+      inject: "body",
+      chunks: ["highscores"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/game/game.html",
+      filename: "game.html",
+      inject: "body",
+      chunks: ["game"],
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/authors/authors.html",
+      filename: "authors.html",
+      inject: "body",
+      chunks: ["authors"],
     }),
     new MiniCssExtractPlugin(),
   ],
