@@ -8,7 +8,7 @@
 }
 
 body {
-  background-image: url("wave-background.png");
+  background-image: url("/static/wave-background.png");
   background-size: cover;
 }
 
