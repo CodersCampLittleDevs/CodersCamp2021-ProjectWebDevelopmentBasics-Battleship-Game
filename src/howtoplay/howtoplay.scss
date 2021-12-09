@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+$base-font-color: #fff;
+$bgc-color: rgba(0, 0, 0, 0.45);
+$base-font-family: "Lato", sans-serif;
+$bg-url: url("wave-background.png");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $base-font-color;
+    font-family: $base-font-family;
+  }
+
+body {
+    background-image: $bg-url;
+    background-size: cover;
+}
+
+.main-container {
+    min-height: 100vh;
+    width: 65vw;
+    background-color: $bgc-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    &__title {
+        font-size: 65px;
+        font-weight: 700;
+        padding: 0 10px 10px 10px;
+        border-bottom: 5px solid $base-font-color;
+        text-align: center;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        }
+
+    &__instruction {
+        width: 70%;
+        font-size: 24px;
+        text-align: center;
+        }
+}
+
+.return {
+    align-self: flex-end;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    font-size: 40px;
+    text-decoration: none;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
