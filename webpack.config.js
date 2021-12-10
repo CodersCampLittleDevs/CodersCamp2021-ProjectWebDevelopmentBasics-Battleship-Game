@@ -41,7 +41,23 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: (content, loaderContext) => {
+                const { resourcePath, rootContext } = loaderContext;
+                const relativePath = path.relative(rootContext, resourcePath);
+
+                return relativePath === "src\\variables.scss"
+                  ? "" + content
+                  : '@import "src/variables.scss";' + content;
+              },
+            },
+          },
+        ],
       },
     ],
   },

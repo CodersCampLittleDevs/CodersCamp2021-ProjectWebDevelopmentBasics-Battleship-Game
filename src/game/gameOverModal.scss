@@ -4,39 +4,54 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
   justify-content: center;
+  align-items: center;
   text-align: center;
   color: white;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    @media screen and (min-width: $medium-breakpoint) {
+      left: 45px;
+      right: 45px;
+    }
+  }
   &__content {
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 80vw;
+    max-height: 80vh;
+    z-index: 999;
     h2 {
       border-bottom: 5px solid white;
       line-height: 1.4;
-      font-size: 48px;
+      font-size: $l-font-size-mobile;
       margin: 0;
-      @media screen and(min-width: $medium) {
-        font-size: 144px;
+      @media screen and(min-width: $medium-breakpoint) {
+        font-size: $l-font-size-desktop;
       }
     }
     h3 {
-      font-size: 24px;
-      @media screen and(min-width: 767px) {
-        font-size: 48px;
+      font-size: $xs-font-size-mobile;
+      @media screen and(min-width: $medium-breakpoint) {
+        font-size: $xs-font-size-desktop;
       }
     }
   }
   &__actions {
-    margin-top: 4rem;
+    margin-top: 64px;
     a {
       display: block;
-      font-size: 32px;
-      color: white;
+      font-size: $m-font-size-mobile;
+      color: #fff;
       text-decoration: none;
-      margin-bottom: 2rem;
-      @media screen and(min-width: 767px) {
-        font-size: 64px;
+      margin-bottom: 32px;
+      @media screen and(min-width: $medium-breakpoint) {
+        font-size: $m-font-size-desktop;
       }
     }
   }

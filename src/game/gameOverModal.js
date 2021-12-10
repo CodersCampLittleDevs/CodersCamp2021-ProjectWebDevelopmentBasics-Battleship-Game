@@ -1,8 +1,7 @@
 import styles from "./gameOverModal.scss";
-import stylesIndex from "../index.module.scss";
 
 const MODAL = document.createElement("div");
-MODAL.classList.add("modal", `${stylesIndex.center}`, `${stylesIndex.flex}`);
+MODAL.classList.add("modal");
 
 export function displayModal(GAME_RESULT, GAME_WIN_OR_LOSE, POINTS) {
   MODAL.innerHTML = `<div class="modal__content">
