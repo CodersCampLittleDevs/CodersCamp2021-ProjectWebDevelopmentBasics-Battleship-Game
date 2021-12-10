@@ -1,1 +1,2 @@
-import { displayResult } from "./gameOverModal";
+import { displayModal } from "./gameOverModal";
+displayModal();

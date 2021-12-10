@@ -1,10 +1,11 @@
 import styles from "./gameOverModal.scss";
+import stylesIndex from "../index.module.scss";
 
-const modal = document.createElement("div");
-modal.classList.add("modal");
+const MODAL = document.createElement("div");
+MODAL.classList.add("modal", `${stylesIndex.center}`, `${stylesIndex.flex}`);
 
-export function displayResult(GAME_RESULT, GAME_WIN_OR_LOSE, POINTS) {
-  modal.innerHTML = `<div class="modal__content">
+export function displayModal(GAME_RESULT, GAME_WIN_OR_LOSE, POINTS) {
+  MODAL.innerHTML = `<div class="modal__content">
                         <h2>${GAME_RESULT}!</h2>
                         <h3>You ${GAME_WIN_OR_LOSE} with ${POINTS} points</h3>
                         <div class="modal__actions">
@@ -13,12 +14,12 @@ export function displayResult(GAME_RESULT, GAME_WIN_OR_LOSE, POINTS) {
                             <a href="/main.html">Return</a>
                         </div>                        
                     </div>`;
-  document.querySelector("body").prepend(modal);
+  document.querySelector("body").prepend(MODAL);
   document
     .querySelector(".modal__new-game-js")
     .addEventListener("click", (event) => {
       event.preventDefault();
-      modal.remove();
+      MODAL.remove();
       //   TODO - add logic for new game
     });
 }
