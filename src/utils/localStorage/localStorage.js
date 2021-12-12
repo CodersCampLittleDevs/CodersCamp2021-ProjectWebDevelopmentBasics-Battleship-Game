@@ -1,10 +1,7 @@
-export function setData(name) {
-  localStorage.setItem("name", name);
-
-  if (localStorage.key(0) !== "") {
-    localStorage.getItem("name");
-  }
-  console.log("dupa");
+export function setDataInStorage(key, value) {
+  localStorage.setItem(key, value);
 }
 
-// exports.modules = { setData };
+export function getDataFromStorage(key) {
+  localStorage.getItem(key);
+}

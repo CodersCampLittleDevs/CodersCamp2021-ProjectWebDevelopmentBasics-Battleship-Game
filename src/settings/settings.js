@@ -1,25 +1,11 @@
 import "./settings.scss";
-import { setData } from "../utils/localStorage/localStorage.js";
+import { setDataInStorage } from "../utils/localStorage/localStorage.js";
 
-window.onload = function () {
-  const button = document.querySelector(".saveBtn");
-  button.addEventListener("click", console.log("dupa"));
-  console.log(button);
+const SAVE_BUTTON = document.querySelector(".savePlayerNameButton");
+const INPUT = document.querySelector(".inputForPlayerName");
+
+const clickToSavePlayerName = () => {
+  setDataInStorage("playerName", INPUT.value);
 };
 
-// console.log("asdas");
-
-// const dupaFunction = () => {
-//   console.log("masło");
-// };
-
-// console.log(saveBtn);
-
-// console.log("B", saveBtn);
-// const inp = document.querySelector("input");
-// const saveBtn = document.querySelector(".saveBtn");
-
-// console.log(document.querySelector(".saveBtn"));
-
-// saveBtn.addEventListener("click", console.log(setData));
-// console.log("c", saveBtn);
+SAVE_BUTTON.addEventListener("click", clickToSavePlayerName);

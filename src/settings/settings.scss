@@ -1,0 +1,70 @@
+$backgroundColorForSection: rgba(0, 0, 0, 0.45);
+$fontColor: #fff;
+
+body {
+  margin: 0;
+  color: $fontColor;
+}
+
+.main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  background-color: $backgroundColorForSection;
+}
+
+.main-section__header {
+  font-size: 65px;
+  border-bottom: 5px solid #fff;
+  width: 250px;
+  text-align: center;
+}
+
+.main-section__playerName {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label[for="placeName"] {
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.inputForPlayerName {
+  width: 450px;
+  height: 100px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.savePlayerNameButton {
+  background: transparent;
+  margin: 10px;
+  border: 0;
+  font-size: 55px;
+  border-bottom: 1px solid #fff;
+  color: $fontColor;
+}
+
+.returnToHomeButton {
+  font-size: 40px;
+  text-decoration: none;
+  align-self: flex-end;
+  margin-right: 79px;
+}
+
+.returnToHomeButton:visited {
+  color: #fff;
+}
