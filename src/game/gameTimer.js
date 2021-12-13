@@ -1,10 +1,10 @@
 import { finishGame } from "./gameResult";
 
-const TIMER = document.querySelector(".timer"); // klasa kontenera w którym znajduje się zegar | do zmiany jeśli będziemy mieli widok
+const TIMER = document.querySelector(".timer"); // container class where will be displayed timer. Change classname if it is necessary
 
 let gameTime;
 
-export function setTime(time = 10) {
+export function setTimer(time = 10) {
   let totalSeconds = time * 60;
   let minutes = totalSeconds / 60;
   let seconds = totalSeconds - minutes * 60;
@@ -43,6 +43,6 @@ export function setTime(time = 10) {
   }, 1000);
 }
 
-export function stopTime() {
+export function stopTimer() {
   clearInterval(gameTime);
 }

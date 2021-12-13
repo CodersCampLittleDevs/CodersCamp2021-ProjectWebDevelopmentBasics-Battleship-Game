@@ -1,2 +1,2 @@
-import { setTime } from "./gameTimer";
+import { setTimer } from "./gameTimer";
 import { finishGame } from "./gameResult";

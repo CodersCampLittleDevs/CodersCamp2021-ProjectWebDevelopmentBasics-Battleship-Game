@@ -1,11 +1,12 @@
 import { displayModal } from "./gameOverModal";
-import { stopTime } from "./gameTimer";
+import { stopTimer } from "./gameTimer";
+import { getDataFromStorage } from "../utils/localStorage/localStorage.js";
 
 export function finishGame() {
   let settlement;
   let result;
-  const computerPoints = window.localStorage.getItem("computerPoints");
-  const userPoints = window.localStorage.getItem("userPoints");
+  const computerPoints = getDataFromStorage("computerPoints");
+  const userPoints = getDataFromStorage("userPoints");
   if (userPoints > computerPoints) {
     settlement = "Victory";
     result = "win";
@@ -13,6 +14,6 @@ export function finishGame() {
     settlement = "Defeat";
     result = "lose";
   }
-  stopTime();
+  stopTimer();
   displayModal(settlement, result, userPoints);
 }
