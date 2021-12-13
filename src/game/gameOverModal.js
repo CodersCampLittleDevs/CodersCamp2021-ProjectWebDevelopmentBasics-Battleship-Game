@@ -1,4 +1,4 @@
-import styles from "./gameOverModal.scss";
+import "./gameOverModal.scss";
 
 const MODAL = document.createElement("div");
 MODAL.classList.add("modal");
@@ -16,9 +16,11 @@ export function displayModal(GAME_RESULT, GAME_WIN_OR_LOSE, POINTS) {
   document.querySelector("body").prepend(MODAL);
   document
     .querySelector(".modal__new-game-js")
-    .addEventListener("click", (event) => {
-      event.preventDefault();
-      MODAL.remove();
-      //   TODO - add logic for new game
-    });
+    .addEventListener("click", closeModal);
+}
+
+function closeModal(event) {
+  event.preventDefault();
+  MODAL.remove();
+  //   TODO - add logic for new game
 }

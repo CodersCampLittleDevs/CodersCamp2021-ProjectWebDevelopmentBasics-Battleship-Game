@@ -1,1 +1,0 @@
-import { displayModal } from "./gameOverModal";

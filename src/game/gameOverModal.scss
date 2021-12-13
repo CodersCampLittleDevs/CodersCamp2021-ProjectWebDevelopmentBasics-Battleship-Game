@@ -8,7 +8,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  color: white;
+  color: $white-color;
   &::before {
     position: absolute;
     content: "";
@@ -16,8 +16,8 @@
     left: 15px;
     right: 15px;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.8);
-    @media screen and (min-width: $medium-breakpoint) {
+    background-color: $black-dark-color;
+    @media screen and (min-width: $m-breakpoint) {
       left: 45px;
       right: 45px;
     }
@@ -27,31 +27,34 @@
     max-height: 80vh;
     z-index: 999;
     h2 {
-      border-bottom: 5px solid white;
-      line-height: 1.4;
-      font-size: $l-font-size-mobile;
+      border-bottom: 5px solid $white-color;
+      line-height: 1;
+      font-size: $xl-font-size-mobile;
+      padding: 0 0 23px 0;
       margin: 0;
-      @media screen and(min-width: $medium-breakpoint) {
-        font-size: $l-font-size-desktop;
+      @media screen and(min-width: $m-breakpoint) {
+        font-size: $xl-font-size-desktop;
       }
     }
     h3 {
-      font-size: $xs-font-size-mobile;
-      @media screen and(min-width: $medium-breakpoint) {
-        font-size: $xs-font-size-desktop;
+      font-size: $m-font-size-mobile;
+      margin: 36px 0;
+      @media screen and(min-width: $m-breakpoint) {
+        font-size: $m-font-size-desktop;
       }
     }
   }
   &__actions {
-    margin-top: 64px;
+    margin-top: 100px;
     a {
       display: block;
-      font-size: $m-font-size-mobile;
-      color: #fff;
+      font-size: $l-font-size-mobile;
+      color: $white-color;
       text-decoration: none;
-      margin-bottom: 32px;
-      @media screen and(min-width: $medium-breakpoint) {
-        font-size: $m-font-size-desktop;
+      font-weight: bold;
+      margin-bottom: 50px;
+      @media screen and(min-width: $m-breakpoint) {
+        font-size: $l-font-size-desktop;
       }
     }
   }

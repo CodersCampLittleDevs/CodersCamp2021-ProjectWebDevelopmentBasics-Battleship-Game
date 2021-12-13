@@ -3,9 +3,8 @@ $xxs-font-size-desktop: 24px;
 $xs-font-size-desktop: 30px;
 $s-font-size-desktop: 40px;
 $m-font-size-desktop: 48px;
-$l-font-size-desktop: 64px;
-$xl-font-size-desktop: 65px;
-$xxl-font-size-desktop: 144px;
+$l-font-size-desktop: 65px;
+$xl-font-size-desktop: 144px;
 
 //font-size mobile
 $xxs-font-size-mobile: 16px;
@@ -13,10 +12,13 @@ $xs-font-size-mobile: 20px;
 $s-font-size-mobile: 26px;
 $m-font-size-mobile: 32px;
 $l-font-size-mobile: 42px;
-$xl-font-size-mobile: 44px;
-$xxl-font-size-mobile: 92px;
+$xl-font-size-mobile: 92px;
 
 // breakpoints
-$medium-breakpoint: 767px;
-$large-breakpoint: 1023px;
-$xlarge-breakpoint: 1399px;
+$m-breakpoint: 767px;
+$l-breakpoint: 1023px;
+$xl-breakpoint: 1399px;
+//colors
+$white-color: #ffffff;
+$black-light-color: rgba(0, 0, 0, 0.45);
+$black-dark-color: rgba(0, 0, 0, 0.8);
