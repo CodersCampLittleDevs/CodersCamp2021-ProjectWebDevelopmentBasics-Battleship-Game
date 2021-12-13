@@ -1,70 +1,67 @@
-$backgroundColorForSection: rgba(0, 0, 0, 0.45);
-$fontColor: #fff;
-
 body {
   margin: 0;
-  color: $fontColor;
+  color: $white-color;
 }
 
-.main-wrapper {
+.main {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
 
-.main-section {
+.section {
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
   height: 100%;
   width: 50%;
-  background-color: $backgroundColorForSection;
+  background-color: $black-background-color;
 }
 
-.main-section__header {
-  font-size: 65px;
-  border-bottom: 5px solid #fff;
+.section__header {
+  font-size: $l-font-size-desktop;
+  border-bottom: 5px solid $white-color;
   width: 250px;
   text-align: center;
 }
 
-.main-section__playerName {
+.section__input {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-label[for="placeName"] {
-  font-size: 48px;
+.section__label {
+  font-size: $m-font-size-desktop;
   margin-bottom: 40px;
 }
 
-.inputForPlayerName {
+.section__input--playerName {
   width: 450px;
   height: 100px;
   text-align: center;
-  font-size: 40px;
-  font-weight: 700;
+  font-size: $s-font-size-desktop;
+  font-weight: $font-bold;
 }
 
-.savePlayerNameButton {
+.section__saveButton {
   background: transparent;
   margin: 10px;
   border: 0;
   font-size: 55px;
-  border-bottom: 1px solid #fff;
-  color: $fontColor;
+  border-bottom: 1px solid $white-color;
+  color: $white-color;
 }
 
-.returnToHomeButton {
-  font-size: 40px;
+.section__returnButton {
+  font-size: $s-font-size-desktop;
   text-decoration: none;
   align-self: flex-end;
   margin-right: 79px;
 }
 
-.returnToHomeButton:visited {
-  color: #fff;
+.section__returnButton:visited {
+  color: $white-color;
 }

@@ -1,8 +1,8 @@
 import "./settings.scss";
 import { setDataInStorage } from "../utils/localStorage/localStorage.js";
 
-const SAVE_BUTTON = document.querySelector(".savePlayerNameButton");
-const INPUT = document.querySelector(".inputForPlayerName");
+const SAVE_BUTTON = document.querySelector(".section__saveButton");
+const INPUT = document.querySelector(".section__input--playerName");
 
 const clickToSavePlayerName = () => {
   setDataInStorage("playerName", INPUT.value);
