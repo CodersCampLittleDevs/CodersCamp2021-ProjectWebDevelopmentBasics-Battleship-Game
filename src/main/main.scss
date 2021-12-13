@@ -1,21 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
+//font-size dekstop
+$xxs-font-size-desktop: 24px;
+$xs-font-size-desktop: 30px;
+$s-font-size-desktop: 40px;
+$m-font-size-desktop: 48px;
+$l-font-size-desktop: 65px;
+$xl-font-size-desktop: 144px;
+
+//font-size mobile
+$xxs-font-size-mobile: 16px;
+$xs-font-size-mobile: 20px;
+$s-font-size-mobile: 26px;
+$m-font-size-mobile: 32px;
+$l-font-size-mobile: 42px;
+$xl-font-size-mobile: 92px;
+
+// breakpoints
+$m-breakpoint: 767px;
+$l-breakpoint: 1023px;
+$xl-breakpoint: 1399px;
+//colors
+$white-color: #ffffff;
+$black-light-color: rgba(0, 0, 0, 0.45);
+$black-dark-color: rgba(0, 0, 0, 0.8);
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: white;
+    color: $white-color;
     font-family: "Lato", sans-serif;
 }
 
 .wrapper {
-    background-image: url(../../wave-background.png);
+    background-image: url(../../src/main/wave-background.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
     width: 100vw;
-
     &__main {
         display: flex;
         flex-direction: column;
@@ -23,48 +47,62 @@
         align-items: center;
         position: relative;
         left: 50px;
-        background-color: rgba(50,50, 50, 0.5);
+        background-color: $black-light-color;
         width: 35vw;
         height: 100vh;
-}
+        @media screen and(max-width: $m-breakpoint) {  
+            left: 10vw;
+            width: 80vw;
+          }
+    }
 }
 
 .title {
-font-size: 50px;
+font-size: $l-font-size-desktop;
 font-weight: 700;
+@media screen and(max-width: $l-breakpoint) {
+    font-size: $m-font-size-desktop;
+  }
+@media screen and(max-width: $m-breakpoint) {
+    font-size: $l-font-size-desktop;
+  }
 }
+
+.line {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: $white-color;
+    opacity: 0;
+    transition: 0.2s;
+    }
 
 .menu {
     flex-basis: 55vh;
-}
-
-.menu__items {
-    list-style: none;
-}
-.menu__item {
+    &__items {
+        list-style: none;
+    }
+    &__item {
     position: relative;
-}
-
-.menu__item_link {
-    display: block;
-    text-decoration: none;
-    font-size: 30px;
-    font-weight: 700;
-    padding: 10px 10px;
-    transition: 0.2s;
-}
-.line {
-position: absolute;
-width: 100%;
-height: 4px;
-background-color: #fff;
-opacity: 0;
-transition: 0.2s;
-}
-
-.menu__item_link:hover {
-    transform: scale(1.5);
-    margin-bottom: 20px;
+        &_link {
+        display: block;
+        text-decoration: none;
+        font-size: $s-font-size-desktop;
+        font-weight: 700;
+        padding: 10px 10px;
+        transition: 0.2s;
+        @media screen and(max-width: $l-breakpoint) {
+            font-size: $xs-font-size-desktop;
+          }
+        @media screen and(max-width: $m-breakpoint) {
+            font-size: $l-font-size-mobile;
+          }
+            &:hover {
+            transform: scale(1.5);
+            margin-bottom: 20px;
+            }
+        }
+    }
 }
 
 .menu__item_link:hover + .line {
