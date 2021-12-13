@@ -1,6 +1,7 @@
 import { finishGame } from "./gameResult";
 
-const TIMER = document.querySelector(".timer"); // container class where will be displayed timer. Change classname if it is necessary
+// container class where will be displayed timer. Change classname if it is necessary
+const TIMER = document.querySelector(".timer");
 
 let gameTime;
 
