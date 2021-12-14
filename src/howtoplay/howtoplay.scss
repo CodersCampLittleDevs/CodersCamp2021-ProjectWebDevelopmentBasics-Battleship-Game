@@ -1,64 +1,68 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-
-$base-font-color: #fff;
-$bgc-color: rgba(0, 0, 0, 0.45);
-$base-font-family: "Lato", sans-serif;
-$bg-url: url("/static/wave-background.png");
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: $base-font-color;
-    font-family: $base-font-family;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $white-color;
+  font-family: $lato-font;
+}
 
 body {
-    background-image: $bg-url;
-    background-size: cover;
+  background-image: url(#{$background-image-path});
+  background-size: cover;
 }
 
-.main-container {
-    min-height: 100vh;
+.main {
+  min-height: 100vh;
+  background-color: $black-light-color;
+  display: flex;
+  width: 90vw;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  @media screen and (min-width: $l-breakpoint) {
     width: 65vw;
-    background-color: $bgc-color;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: auto;
+  }
 }
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    
-    &__title {
-        font-size: 65px;
-        font-weight: 700;
-        padding: 0 10px 10px 10px;
-        border-bottom: 5px solid $base-font-color;
-        text-align: center;
-        margin-bottom: 5%;
-        margin-top: 5%;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 
-    &__instruction {
-        width: 70%;
-        font-size: 24px;
-        text-align: center;
-        }
+  &__title {
+    font-size: $m-font-size-mobile;
+    font-weight: 700;
+    padding: 0 10px 10px 10px;
+    border-bottom: 5px solid $white-color;
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    @media screen and (min-width: $m-breakpoint) {
+      font-size: $l-font-size-desktop;
+    }
+  }
+
+  &__instruction {
+    width: 90%;
+    text-align: center;
+    font-size: $xxs-font-size-mobile;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $xs-font-size-desktop;
+    }
+  }
 }
 
 .return {
-    align-self: flex-end;
-    margin-bottom: 5%;
-    margin-right: 5%;
-    font-size: 40px;
-    text-decoration: none;
-    transition: all .2s ease-in-out;
-
+  align-self: flex-end;
+  font-size: $s-font-size-mobile;
+  margin-bottom: 5%;
+  margin-right: 5%;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  @media screen and(min-width: $m-breakpoint) {
+    font-size: $s-font-size-desktop;
     &:hover {
-        transform: scale(1.2);
+      transform: scale(1.3);
     }
+  }
 }
