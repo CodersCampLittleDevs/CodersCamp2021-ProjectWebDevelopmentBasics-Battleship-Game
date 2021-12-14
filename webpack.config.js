@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const config = {
   entry: {
     index: path.resolve(__dirname, "./src/app/App.js"),
-    main: path.resolve(__dirname, "./src/main/main.js"),
+    main: path.resolve(__dirname, "./src/index.js"),
     settings: path.resolve(__dirname, "./src/settings/settings.js"),
     game: path.resolve(__dirname, "./src/game/game.js"),
     authors: path.resolve(__dirname, "./src/authors/authors.js"),
@@ -13,6 +13,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
 
   mode: "development",
@@ -20,6 +21,7 @@ const config = {
     static: {
       directory: path.join(__dirname, "public"),
     },
+    open: true,
     compress: true,
     port: 9000,
   },
@@ -42,6 +44,23 @@ const config = {
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: (content, loaderContext) => {
+                const { resourcePath, rootContext } = loaderContext;
+                const relativePath = path.relative(rootContext, resourcePath);
+
+                return relativePath === "src\\variables.scss"
+                  ? content
+                  : '@import "src/variables.scss";' + content;
+              },
+            },
+          },
+        ],
       },
     ],
   },
@@ -85,5 +104,4 @@ const config = {
     new MiniCssExtractPlugin(),
   ],
 };
-
 module.exports = config;
