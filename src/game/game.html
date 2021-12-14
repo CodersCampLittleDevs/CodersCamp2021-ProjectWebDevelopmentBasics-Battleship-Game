@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
-
 <body>
-    <div>game</div>
-</body>
+    <main class="wrapper">
+        <div class="wrapper__main">
+            <div class="timer">
+                <span class="timer__counter">10:00</span>
+            </div>
+            <div class="board__wrapper">
+                <div class="board__player">
+                    <h1 class="board__player-name player">Player</h1>
+                </div>
+                <div class="board__board">
+                    <div class="board__board-fieldsWrapper"></div>
+                    <div class="board__charactersWrapper"></div>
+                    <div class="board__numbersWrapper"></div>
+                </div>
+                <div class="board__shipsWrapper">
+                    <h1 class="board__heading">Ships left:</h1>
+                    <div class="board__shipsWrapper-ships"></div>
+                </div>
+            </div>
+            <div class="board__wrapper">
+                <div class="board__player">
+                    <h1 class="board__player-name">Computer</h1>
+                </div>
+                <div class="board__board">
+                    <div class="board__board-fieldsWrapper computerGameBoard"></div>
+                    <div class="board__charactersWrapper"></div>
+                    <div class="board__numbersWrapper"></div>
+                </div>
+                <div class="board__shipsWrapper">
+                    <h1 class="board__heading">Ships left:</h1>
+                    <div class="board__shipsWrapper-ships"></div>
+                </div>
+            </div>
+            <button class="homePageButton">Return</button>
+        </div>
+    </main>
 
+</body>
 </html>

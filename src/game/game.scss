@@ -1,9 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import "../variables.scss";
 
-$base-font-color: #fff;
-$btn-color: #243c60;
-$bgc-color: rgba(0, 0, 0, 0.45);
-$btn-color-hover: #051e42;
 $base-font-family: "Lato", sans-serif;
 $bg-url: url("./bg.png");
 
@@ -11,7 +8,7 @@ $bg-url: url("./bg.png");
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color: $base-font-color;
+  color: $white-color;
   font-family: $base-font-family;
 }
 
@@ -22,7 +19,7 @@ $bg-url: url("./bg.png");
   background-image: $bg-url;
 
   &__main {
-    background-color: $bgc-color;
+    background-color: $black-light-color;
     height: 100%;
     width: 90%;
     margin: 0 auto;
@@ -36,11 +33,11 @@ $bg-url: url("./bg.png");
   position: absolute;
   top: 5%;
   &__counter {
-    font-size: 48px;
+    font-size: $m-font-size-desktop;
     font-weight: bold;
   }
 }
-.gameBoard {
+.board {
   &__wrapper {
     height: 100%;
     width: 100%;
@@ -56,14 +53,14 @@ $bg-url: url("./bg.png");
     top: 10%;
 
     &-name {
-      font-size: 40px;
+      font-size: $s-font-size-desktop;
     }
   }
 
   &__board {
     width: 400px;
     height: 400px;
-    background-color: #fff;
+    background-color: $white-color;
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -103,15 +100,15 @@ $bg-url: url("./bg.png");
     transform: translate(-50%, -50%);
     height: 25%;
     width: 85%;
-    background-color: $btn-color;
+    background-color: $blue-light-color;
     border: none;
     border-radius: 15px;
-    font-size: 48px;
+    font-size: $m-font-size-desktop;
     font-weight: 700;
 
     &:hover {
       cursor: pointer;
-      background-color: $btn-color-hover;
+      background-color: $blue-dark-color;
     }
   }
   &__charactersWrapper {
@@ -130,7 +127,7 @@ $bg-url: url("./bg.png");
       align-items: center;
 
       h1 {
-        font-size: 24px;
+        font-size: $xxs-font-size-desktop;
       }
     }
   }
@@ -150,7 +147,7 @@ $bg-url: url("./bg.png");
       align-items: center;
 
       h1 {
-        font-size: 24px;
+        font-size: $xxs-font-size-desktop;
       }
     }
   }
@@ -170,7 +167,7 @@ $bg-url: url("./bg.png");
     }
 
     &-ship {
-      background-color: $base-font-color;
+      background-color: $white-color;
       height: 25px;
       margin: 5px 10px 5px 0;
     }
@@ -181,11 +178,11 @@ $bg-url: url("./bg.png");
   }
 }
 
-.homaPageButton {
+.homePageButton {
   border: none;
   background-color: transparent;
-  color: #fff;
-  font-size: 24px;
+  color: $white-color;
+  font-size: $xxs-font-size-desktop;
   font-weight: 700;
   position: absolute;
   right: 5%;
