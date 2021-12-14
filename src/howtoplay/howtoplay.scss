@@ -6,11 +6,6 @@
   font-family: $lato-font;
 }
 
-body {
-  background-image: url(#{$background-image-path});
-  background-size: cover;
-}
-
 .main {
   min-height: 100vh;
   background-color: $black-light-color;
