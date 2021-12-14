@@ -9,6 +9,7 @@ const config = {
     game: path.resolve(__dirname, "./src/game/game.js"),
     authors: path.resolve(__dirname, "./src/authors/authors.js"),
     highscores: path.resolve(__dirname, "./src/highscores/highscores.js"),
+    howtoplay: path.resolve(__dirname, "./src/howtoplay/howtoplay.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -70,6 +71,12 @@ const config = {
       chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
+      template: "./src/howtoplay/howtoplay.html",
+      filename: "howtoplay.html",
+      inject: "body",
+      chunks: ["howtoplay"],
+    }),
+    new HtmlWebpackPlugin({
       template: "./src/settings/settings.html",
       filename: "settings.html",
       inject: "body",
@@ -96,5 +103,4 @@ const config = {
     new MiniCssExtractPlugin(),
   ],
 };
-
 module.exports = config;
