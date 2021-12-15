@@ -8,11 +8,11 @@ import {
 const SAVE_BUTTON = document.querySelector(".section__button--save");
 const INPUT = document.querySelector(".section__input--playerName");
 
-const onbuttonClick = () => {
+const onButtonClick = () => {
   setDataInStorage("playerName", INPUT.value);
 };
 
-function getPlayerNameIfExists() {
+function setPlayerName() {
   
   const playerName = getDataFromStorage("playerName");
 
@@ -21,5 +21,5 @@ function getPlayerNameIfExists() {
   }
 }
 
-getPlayerNameIfExists();
-SAVE_BUTTON.addEventListener("click", onbuttonClick);
+setPlayerName();
+SAVE_BUTTON.addEventListener("click", onButtonClick);
