@@ -1,52 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import "./variables.scss";
 
-//font-size dekstop
-$xxs-font-size-desktop: 24px;
-$xs-font-size-desktop: 30px;
-$s-font-size-desktop: 40px;
-$m-font-size-desktop: 48px;
-$l-font-size-desktop: 65px;
-$xl-font-size-desktop: 144px;
+@import "./styles.scss";
 
-//font-size mobile
-$xxs-font-size-mobile: 16px;
-$xs-font-size-mobile: 20px;
-$s-font-size-mobile: 26px;
-$m-font-size-mobile: 32px;
-$l-font-size-mobile: 42px;
-$xl-font-size-mobile: 92px;
-
-// breakpoints
-$m-breakpoint: 767px;
-$l-breakpoint: 1023px;
-$xl-breakpoint: 1399px;
-//colors
-$white-color: #ffffff;
-$black-light-color: rgba(0, 0, 0, 0.45);
-$black-dark-color: rgba(0, 0, 0, 0.8);
-$lato-font: "Lato", sans-serif;
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    color: $white-color;
-    font-family: $lato-font;
-}
-
-body {
-    background-image: url(../../src/main/wave-background.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 .logo {
-    @media screen and(max-width: $l-breakpoint) {
-        transform: scale(0.8);
-      }
-}
+    padding: 40px 0;
+    }
 
 .main {
     display: flex;
@@ -58,6 +17,8 @@ body {
     background-color: $black-light-color;
     width: 35vw;
     height: 100vh;
+    color: $white-color;
+    font-family: $lato-font;
     @media screen and(max-width: $l-breakpoint) {
     width: 45vw;
     }
@@ -67,44 +28,26 @@ body {
     }
 }
 .menu {
-    flex-basis: 55vh;
-}
-
-// .menu {
-//     &__items {
-//         // list-style: none;
-//         align-items: center;
-//         &__item {
-//         position: relative;
-//         // text-decoration: none;
-//             .menu__link {
-//             // text-align: center;        
-//             // display: block;
-//             // text-decoration: none;
-//             // font-size: $s-font-size-desktop;
-//             font-weight: 700;
-//             padding: 10px 10px;
-//             transition: 0.2s;
-//             // @media screen and(max-width: $l-breakpoint) {
-//             // font-size: $xs-font-size-desktop;
-//             // }
-//             // @media screen and(max-width: $m-breakpoint) {
-//             // font-size: $l-font-size-mobile;
-//             // }
-//             // &:hover {
-//             // transform: scale(1.5);
-//             // margin-bottom: 20px;
-//             // }
-//             }
-//         }   
-//     }
-// }
-
-.--line {
-    border-bottom: 4px red solid;
+    flex-basis: 70vh;
+    &__item {
+        list-style: none;
+        text-align: center;
     }
-
-.menu__link:hover + .--line {
-    opacity: 1;
-    transform: scale(1.3);
+    &__link {
+        display: block;
+        text-decoration: none;
+        color: $white-color;
+        font-size: $l-font-size-mobile;
+        font-weight: bold;
+        margin: 10px 0;
+        transition: 0.2s;
+        @media screen and(min-width: $l-breakpoint) {
+            font-size: $m-font-size-desktop;
+                        }
+        &--line:hover {
+            border-bottom: 4px $white-color solid;
+            transform: scale(1.3);
+            padding-bottom: 10px;
+        }
+    }
 }

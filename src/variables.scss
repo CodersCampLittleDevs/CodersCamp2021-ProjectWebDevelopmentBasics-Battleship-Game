@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+
+//font-family
+$lato-font: "Lato", "sans-serif";
+
+//font-size dekstop
+$xxs-font-size-desktop: 24px;
+$xs-font-size-desktop: 30px;
+$s-font-size-desktop: 40px;
+$m-font-size-desktop: 48px;
+$l-font-size-desktop: 65px;
+$xl-font-size-desktop: 144px;
+
+//font-size mobile
+$xxs-font-size-mobile: 16px;
+$xs-font-size-mobile: 20px;
+$s-font-size-mobile: 26px;
+$m-font-size-mobile: 32px;
+$l-font-size-mobile: 42px;
+$xl-font-size-mobile: 92px;
+
+// breakpoints
+$m-breakpoint: 767px;
+$l-breakpoint: 1023px;
+$xl-breakpoint: 1399px;
+
+//colors
+$white-color: #ffffff;
+$black-light-color: rgba(0, 0, 0, 0.45);
+$black-dark-color: rgba(0, 0, 0, 0.8);
+
+//images
+$background-image-path: "./static/img/wave-background.png";
