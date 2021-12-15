@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const config = {
   entry: {
     index: path.resolve(__dirname, "./src/index.js"),
-    main: path.resolve(__dirname, "./src/main/main.js"),
     settings: path.resolve(__dirname, "./src/settings/settings.js"),
     game: path.resolve(__dirname, "./src/game/game.js"),
     authors: path.resolve(__dirname, "./src/authors/authors.js"),
@@ -83,12 +82,6 @@ const config = {
       filename: "settings.html",
       inject: "body",
       chunks: ["settings"],
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/main/main.html",
-      filename: "main.html",
-      inject: "body",
-      chunks: ["main"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/highscores/highscores.html",
