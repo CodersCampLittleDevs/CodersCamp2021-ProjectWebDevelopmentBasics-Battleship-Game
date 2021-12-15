@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  color: $white-color;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+  background-color: $black-light-color;
+}
+
+.section__header {
+  font-size: $l-font-size-desktop;
+  border-bottom: 5px solid $white-color;
+  width: 250px;
+  text-align: center;
+}
+
+.section__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input__label {
+  font-size: $m-font-size-desktop;
+  margin-bottom: 40px;
+}
+
+.section__input--playerName {
+  width: 450px;
+  height: 100px;
+  text-align: center;
+  font-size: $s-font-size-desktop;
+  font-weight: $font-bold;
+}
+
+.section__button--save {
+  background: transparent;
+  margin: 10px;
+  border: 0;
+  font-size: $m-font-size-desktop;
+  border-bottom: 1px solid $white-color;
+  color: $white-color;
+}
+
+.section__link--return {
+  font-size: $s-font-size-desktop;
+  text-decoration: none;
+  align-self: flex-end;
+  margin-right: 79px;
+}
+
+.section__link--return:visited {
+  color: $white-color;
+}
