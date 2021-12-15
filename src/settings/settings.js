@@ -13,8 +13,11 @@ const onbuttonClick = () => {
 };
 
 function getPlayerNameIfExists() {
-  if (localStorage.length > 0) {
-    INPUT.value = getDataFromStorage("playerName");
+  
+  const playerName = getDataFromStorage("playerName");
+
+  if(playerName) {
+    INPUT.value = playerName;
   }
 }
 
