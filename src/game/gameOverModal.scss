@@ -26,36 +26,36 @@
     max-width: 80vw;
     max-height: 80vh;
     z-index: 999;
-    h2 {
-      border-bottom: 5px solid $white-color;
-      line-height: 1;
-      font-size: $xl-font-size-mobile;
-      padding: 0 0 23px 0;
-      margin: 0;
-      @media screen and(min-width: $m-breakpoint) {
-        font-size: $xl-font-size-desktop;
-      }
+  }
+  &__settlement {
+    border-bottom: 5px solid $white-color;
+    line-height: 1;
+    font-size: $xl-font-size-mobile;
+    padding: 0 0 23px 0;
+    margin: 0;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $xl-font-size-desktop;
     }
-    h3 {
-      font-size: $m-font-size-mobile;
-      margin: 36px 0;
-      @media screen and(min-width: $m-breakpoint) {
-        font-size: $m-font-size-desktop;
-      }
+  }
+  &__result {
+    font-size: $m-font-size-mobile;
+    margin: 36px 0;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $m-font-size-desktop;
     }
   }
   &__actions {
     margin-top: 100px;
-    a {
-      display: block;
-      font-size: $l-font-size-mobile;
-      color: $white-color;
-      text-decoration: none;
-      font-weight: bold;
-      margin-bottom: 50px;
-      @media screen and(min-width: $m-breakpoint) {
-        font-size: $l-font-size-desktop;
-      }
-    }
+  }
+  &__action-item {
+    display: block;
+    font-size: $l-font-size-mobile;
+    color: $white-color;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 50px;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $l-font-size-desktop;
+    }    
   }
 }

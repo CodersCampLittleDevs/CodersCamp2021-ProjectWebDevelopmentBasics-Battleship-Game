@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Battleships game</title>
 </head>
 <body>
     <main class="wrapper">
         <div class="wrapper__main">
+            <button class="startGameButton">Let's play!</button>
             <div class="timer">
                 <span class="timer__counter">10:00</span>
             </div>
@@ -21,26 +22,30 @@
                     <div class="board__charactersWrapper"></div>
                     <div class="board__numbersWrapper"></div>
                 </div>
-                <div class="board__shipsWrapper">
-                    <h1 class="board__heading">Ships left:</h1>
-                    <div class="board__shipsWrapper-ships"></div>
+                <div class="shipsWrapper">
+                    <h1 class="shipsWrapper__heading">Your ships:</h1>
+                    <div class="shipsWrapper__ships"></div>
+                    <div class="shipsWrapper__buttons">
+                        <button class="shipsWrapper__buttons-btn">Rotate</button>
+                        <button class="shipsWrapper__buttons-btn">Randomize</button>
+                    </div>
                 </div>
             </div>
             <div class="board__wrapper">
                 <div class="board__player">
                     <h1 class="board__player-name">Computer</h1>
                 </div>
-                <div class="board__board">
-                    <div class="board__board-fieldsWrapper computerGameBoard"></div>
-                    <div class="board__charactersWrapper"></div>
-                    <div class="board__numbersWrapper"></div>
+                <div class="board__board ">
+                    <div class="board__board-fieldsWrapper computerGameBoard "></div>
+                    <div class="board__charactersWrapper "></div>
+                    <div class="board__numbersWrapper "></div>
                 </div>
-                <div class="board__shipsWrapper">
-                    <h1 class="board__heading">Ships left:</h1>
-                    <div class="board__shipsWrapper-ships"></div>
+                <div class="shipsWrapper">
+                    <h1 class="shipsWrapper__heading ">Computer ships:</h1>
+                    <div class="shipsWrapper__ships"></div>
                 </div>
             </div>
-            <button class="homePageButton">Return</button>
+            <a class="homePageButton" href="index.html">Return</a>
         </div>
     </main>
 

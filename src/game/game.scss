@@ -1,40 +1,64 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 @import "../variables.scss";
 
-$base-font-family: "Lato", sans-serif;
-$bg-url: url("./bg.png");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+%button {
+  background-color: $blue-light-color;
+  border: none;
+  border-radius: 15px;
+  font-size: $xs-font-size-desktop;
+  font-weight: $font-bold;
   color: $white-color;
-  font-family: $base-font-family;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $blue-dark-color;
+  }
 }
 
 .wrapper {
   height: 100vh;
   width: 100vw;
-  display: flex;
-  background-image: $bg-url;
+  overflow: hidden;
 
   &__main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: 0 auto;
     background-color: $black-light-color;
     height: 100%;
     width: 90%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    position: relative;
+    @media only screen and (min-width: $l-breakpoint) {
+      flex-direction: row;
+    }
   }
 }
 
 .timer {
   position: absolute;
-  top: 5%;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  @media only screen and (min-width: $l-breakpoint) {
+    top: 5%;
+  }
   &__counter {
-    font-size: $m-font-size-desktop;
-    font-weight: bold;
+    font-weight: $font-bold;
+    color: $white-color;
+    font-size: $xxs-font-size-mobile;
+    @media only screen and (min-width: $m-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $s-font-size-desktop;
+    }
   }
 }
 .board {
@@ -46,24 +70,40 @@ $bg-url: url("./bg.png");
     justify-content: center;
     align-items: center;
     position: relative;
+    @media only screen and (min-width: $l-breakpoint) {
+      justify-content: space-around;
+    }
   }
 
   &__player {
-    position: absolute;
-    top: 10%;
+    padding: 30px 0;
 
     &-name {
-      font-size: $s-font-size-desktop;
+      color: $white-color;
+      font-size: $xxs-font-size-mobile;
+      @media only screen and (min-width: $m-breakpoint) {
+        font-size: $xs-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $s-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $s-font-size-desktop;
+      }
     }
   }
 
   &__board {
-    width: 400px;
-    height: 400px;
+    width: 30vh;
+    height: 30vh;
     background-color: $white-color;
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    @media only screen and (min-width: $l-breakpoint) {
+      width: 50vh;
+      height: 50vh;
+    }
 
     &-fieldsWrapper {
       height: 100%;
@@ -75,7 +115,9 @@ $bg-url: url("./bg.png");
     &-field {
       height: 10%;
       width: 10%;
-      border: 1px solid black;
+      border: 1px solid $black-light-color;
+      cursor: pointer;
+
       &:nth-child(-n + 10) {
         border-top: none;
       }
@@ -93,41 +135,37 @@ $bg-url: url("./bg.png");
       }
     }
   }
-  &__RandomizeButton {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 25%;
-    width: 85%;
-    background-color: $blue-light-color;
-    border: none;
-    border-radius: 15px;
-    font-size: $m-font-size-desktop;
-    font-weight: 700;
 
-    &:hover {
-      cursor: pointer;
-      background-color: $blue-dark-color;
-    }
-  }
   &__charactersWrapper {
     position: absolute;
     width: 40px;
     height: 100%;
-    left: -40px;
+    left: -30px;
     display: flex;
     flex-direction: column;
+    @media only screen and (min-width: $m-breakpoint) {
+      left: -40px;
+    }
 
     &-char {
-      height: 40px;
-      width: 40px;
+      height: 10%;
+      width: 10%;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: $white-color;
 
       h1 {
-        font-size: $xxs-font-size-desktop;
+        font-size: $xxs-font-size-mobile;
+        @media only screen and (min-width: $m-breakpoint) {
+          font-size: $xs-font-size-mobile;
+        }
+        @media only screen and (min-width: $l-breakpoint) {
+          font-size: $xxs-font-size-desktop;
+        }
+        @media only screen and (min-width: $l-breakpoint) {
+          font-size: $xxs-font-size-desktop;
+        }
       }
     }
   }
@@ -136,59 +174,169 @@ $bg-url: url("./bg.png");
     position: absolute;
     width: 100%;
     height: 40px;
-    top: -40px;
+    top: -30px;
     display: flex;
+    @media only screen and (min-width: $m-breakpoint) {
+      top: -40px;
+    }
 
     &-numb {
-      height: 50px;
-      width: 50px;
+      height: 40px;
+      width: 40px;
       display: flex;
       justify-content: center;
       align-items: center;
+      color: $white-color;
 
       h1 {
-        font-size: $xxs-font-size-desktop;
+        font-size: $xxs-font-size-mobile;
+        @media only screen and (min-width: $m-breakpoint) {
+          font-size: $xs-font-size-mobile;
+        }
+        @media only screen and (min-width: $l-breakpoint) {
+          font-size: $xxs-font-size-desktop;
+        }
+        @media only screen and (min-width: $l-breakpoint) {
+          font-size: $xxs-font-size-desktop;
+        }
       }
     }
   }
+}
 
-  &__shipsWrapper {
-    position: absolute;
-    bottom: 5%;
-    width: 400px;
+.shipsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 30vh;
+
+  @media only screen and (min-width: $m-breakpoint) {
+    width: 30vh;
+  }
+  @media only screen and (min-width: $l-breakpoint) {
+    width: 50vh;
+    height: 25vh;
+  }
+
+  &__ships {
+    padding: 10px 0;
     display: flex;
     flex-wrap: wrap;
+    justify-content: start;
+    align-items: end;
+  }
 
-    &-ships {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: start;
-      align-items: end;
+  &-ship {
+    background-color: $white-color;
+    margin: 5px 10px 5px 0;
+    cursor: pointer;
+    height: 10px;
+    @media only screen and (min-width: $m-breakpoint) {
+      height: 15px;
     }
-
-    &-ship {
-      background-color: $white-color;
+    @media only screen and (min-width: $l-breakpoint) {
       height: 25px;
-      margin: 5px 10px 5px 0;
     }
-
-    &__heading {
-      font-weight: 700;
+    @media only screen and (min-width: $l-breakpoint) {
+      height: 25px;
+    }
+  }
+  &__heading {
+    font-weight: $font-bold;
+    color: $white-color;
+    font-size: $xxs-font-size-mobile;
+    @media only screen and (min-width: $m-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    max-height: 100px;
+    @media only screen and (min-width: $l-breakpoint) {
+      width: 90%;
+    }
+    &-btn {
+      height: 3vh;
+      width: 45%;
+      font-size: $xxs-font-size-mobile;
+      @extend %button;
+      @media only screen and (min-width: $m-breakpoint) {
+        font-size: $xs-font-size-mobile;
+        height: 3vh;
+        width: 45%;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
+        height: 60%;
+        max-height: 40px;
+        width: 40%;
+      }
     }
   }
 }
 
 .homePageButton {
-  border: none;
-  background-color: transparent;
   color: $white-color;
-  font-size: $xxs-font-size-desktop;
-  font-weight: 700;
+  font-weight: $font-bold;
   position: absolute;
   right: 5%;
-  bottom: 3%;
+  bottom: 5%;
+  text-decoration: none;
+  transition: 0.2s;
+  font-size: $xs-font-size-mobile;
+  @media only screen and (min-width: $m-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+    right: 5%;
+    bottom: 3%;
+  }
+  @media only screen and (min-width: $l-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+  }
+  @media only screen and (min-width: $l-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+  }
 
   &:hover {
     cursor: pointer;
+    border-bottom: 4px $white-color solid;
+    transform: scale(1.1);
+    padding-bottom: 5px;
+  }
+}
+
+.computer {
+  background-color: $black-light-color;
+  color: $black-light-color;
+}
+
+.startGameButton {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 3%;
+  width: 25%;
+  z-index: 1;
+  @extend %button;
+  font-size: $xxs-font-size-mobile;
+  @media only screen and (min-width: $m-breakpoint) {
+    font-size: $xs-font-size-mobile;
+    height: 4%;
+    width: 15%;
+  }
+  @media only screen and (min-width: $l-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+    height: 7%;
+    width: 15%;
   }
 }

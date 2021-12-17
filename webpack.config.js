@@ -4,12 +4,12 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
   entry: {
-    index: path.resolve(__dirname, "./src/app/App.js"),
-    main: path.resolve(__dirname, "./src/index.js"),
+    index: path.resolve(__dirname, "./src/index.js"),
     settings: path.resolve(__dirname, "./src/settings/settings.js"),
     game: path.resolve(__dirname, "./src/game/game.js"),
     authors: path.resolve(__dirname, "./src/authors/authors.js"),
     highscores: path.resolve(__dirname, "./src/highscores/highscores.js"),
+    howtoplay: path.resolve(__dirname, "./src/howtoplay/howtoplay.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -43,7 +43,6 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
@@ -72,16 +71,16 @@ const config = {
       chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
+      template: "./src/howtoplay/howtoplay.html",
+      filename: "howtoplay.html",
+      inject: "body",
+      chunks: ["howtoplay"],
+    }),
+    new HtmlWebpackPlugin({
       template: "./src/settings/settings.html",
       filename: "settings.html",
       inject: "body",
       chunks: ["settings"],
-    }),
-    new HtmlWebpackPlugin({
-      template: "./src/main/main.html",
-      filename: "main.html",
-      inject: "body",
-      chunks: ["main"],
     }),
     new HtmlWebpackPlugin({
       template: "./src/highscores/highscores.html",
