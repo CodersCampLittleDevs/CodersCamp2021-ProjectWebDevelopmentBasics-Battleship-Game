@@ -1,8 +1,8 @@
 // container class where will be displayed timer. Change classname if it is necessary
 let gameTime;
 
-function setTimer(time = 10, cb) {
-  const TIMER = document.querySelector(".timer");
+function setTimer(time = 10, finishGame) {
+  const timer = document.querySelector(".timer");
   let totalSeconds = time * 60;
   let minutes = totalSeconds / 60;
   let seconds = totalSeconds - minutes * 60;
@@ -15,7 +15,7 @@ function setTimer(time = 10, cb) {
     minutes = "0" + minutes;
   }
 
-  TIMER.textContent = `${minutes}:${seconds}`;
+  timer.textContent = `${minutes}:${seconds}`;
 
   gameTime = setInterval(() => {
     totalSeconds -= 1;
@@ -32,10 +32,10 @@ function setTimer(time = 10, cb) {
       minutes = "0" + minutes;
     }
 
-    TIMER.textContent = `${minutes}:${seconds}`;
+    timer.textContent = `${minutes}:${seconds}`;
 
     if (totalSeconds === 0) {
-      cb();
+      finishGame();
     }
   }, 1000);
 }

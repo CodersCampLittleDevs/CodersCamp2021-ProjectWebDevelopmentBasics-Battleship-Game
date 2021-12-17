@@ -9,7 +9,7 @@ const timer = document.createElement("div");
 timer.classList.add("timer");
 document.querySelector("body").append(timer);
 
-const mockFunciton = jest.fn();
+const mockFunction = jest.fn();
 
 describe("Using function setTimer", () => {
   describe("parameteres provided", () => {
@@ -20,7 +20,7 @@ describe("Using function setTimer", () => {
     `(
       "returns $input.textContent when first parameter is $input.minutes at the beginning of game",
       ({ input }) => {
-        setTimer(input.minutes, mockFunciton);
+        setTimer(input.minutes, mockFunction);
         expect(timer.textContent).toEqual(input.textContent);
       }
     );

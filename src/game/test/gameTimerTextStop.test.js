@@ -20,7 +20,7 @@ describe("Using function gameTimer and stopTimer", () => {
       input
       ${{ minutes: undefined, textContent: "09:50", secondsToStop: 10 }}
     `(
-      "returns $input.textContent when call stopTimer function after $input.secondsToStop seconds when first parameter for gameTimer funciton is $input.minutes",
+      "returns $input.textContent when call stopTimer function after $input.secondsToStop seconds when first parameter for gameTimer function is $input.minutes",
       ({ input, expected }) => {
         setTimer(input.minutes, mockFunction);
         jest.useFakeTimers();
