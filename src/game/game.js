@@ -4,12 +4,12 @@ import { createGameBoards, checkIsGameStarter } from "./createGameBoards";
 import { finishGame } from "./gameResult";
 import { setTimer } from "./gameTimer";
 
-const startGameBtn = document.querySelector(".startGameButton");
+const START_GAME_BTN = document.querySelector(".startGameButton");
 let isGameStarted = false;
 
-startGameBtn.addEventListener("click", function () {
+START_GAME_BTN.addEventListener("click", function () {
   isGameStarted = !isGameStarted;
-  checkIsGameStarter(isGameStarted, startGameBtn);
+  checkIsGameStarter(isGameStarted, START_GAME_BTN);
 });
 
 createGameBoards();

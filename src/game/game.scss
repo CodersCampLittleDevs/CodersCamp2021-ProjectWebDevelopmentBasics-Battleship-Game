@@ -1,6 +1,6 @@
 @import "../variables.scss";
 
-%button {
+@mixin button {
   background-color: $blue-light-color;
   border: none;
   border-radius: 15px;
@@ -22,19 +22,19 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
 
-  &__main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    margin: 0 auto;
-    background-color: $black-light-color;
-    height: 100%;
-    width: 90%;
-    @media only screen and (min-width: $l-breakpoint) {
-      flex-direction: row;
-    }
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  background-color: $black-light-color;
+  height: 100%;
+  width: 90%;
+  @media only screen and (min-width: $l-breakpoint) {
+    flex-direction: row;
   }
 }
 
@@ -62,6 +62,16 @@
   }
 }
 .board {
+  width: 30vh;
+  height: 30vh;
+  background-color: $white-color;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  @media only screen and (min-width: $l-breakpoint) {
+    width: 50vh;
+    height: 50vh;
+  }
   &__wrapper {
     height: 100%;
     width: 100%;
@@ -93,50 +103,37 @@
     }
   }
 
-  &__board {
-    width: 30vh;
-    height: 30vh;
-    background-color: $white-color;
+  &__fields {
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    position: relative;
-    @media only screen and (min-width: $l-breakpoint) {
-      width: 50vh;
-      height: 50vh;
+  }
+
+  &__field {
+    height: 10%;
+    width: 10%;
+    border: 1px solid $black-light-color;
+    cursor: pointer;
+
+    &:nth-child(-n + 10) {
+      border-top: none;
     }
 
-    &-fieldsWrapper {
-      height: 100%;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
+    &:nth-child(10n) {
+      border-right: none;
     }
 
-    &-field {
-      height: 10%;
-      width: 10%;
-      border: 1px solid $black-light-color;
-      cursor: pointer;
+    &:nth-child(10n + 1) {
+      border-left: none;
+    }
 
-      &:nth-child(-n + 10) {
-        border-top: none;
-      }
-
-      &:nth-child(10n) {
-        border-right: none;
-      }
-
-      &:nth-child(10n + 1) {
-        border-left: none;
-      }
-
-      &:nth-child(n + 91) {
-        border-bottom: none;
-      }
+    &:nth-child(n + 91) {
+      border-bottom: none;
     }
   }
 
-  &__charactersWrapper {
+  &__characters {
     position: absolute;
     width: 40px;
     height: 100%;
@@ -154,23 +151,20 @@
       justify-content: center;
       align-items: center;
       color: $white-color;
-
-      h1 {
-        font-size: $xxs-font-size-mobile;
-        @media only screen and (min-width: $m-breakpoint) {
-          font-size: $xs-font-size-mobile;
-        }
-        @media only screen and (min-width: $l-breakpoint) {
-          font-size: $xxs-font-size-desktop;
-        }
-        @media only screen and (min-width: $l-breakpoint) {
-          font-size: $xxs-font-size-desktop;
-        }
+      font-size: $xxs-font-size-mobile;
+      @media only screen and (min-width: $m-breakpoint) {
+        font-size: $xs-font-size-mobile;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
       }
     }
   }
 
-  &__numbersWrapper {
+  &__numbers {
     position: absolute;
     width: 100%;
     height: 40px;
@@ -187,38 +181,37 @@
       justify-content: center;
       align-items: center;
       color: $white-color;
-
-      h1 {
-        font-size: $xxs-font-size-mobile;
-        @media only screen and (min-width: $m-breakpoint) {
-          font-size: $xs-font-size-mobile;
-        }
-        @media only screen and (min-width: $l-breakpoint) {
-          font-size: $xxs-font-size-desktop;
-        }
-        @media only screen and (min-width: $l-breakpoint) {
-          font-size: $xxs-font-size-desktop;
-        }
+      font-size: $xxs-font-size-mobile;
+      @media only screen and (min-width: $m-breakpoint) {
+        font-size: $xs-font-size-mobile;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
       }
     }
   }
 }
 
-.shipsWrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 30vh;
-
-  @media only screen and (min-width: $m-breakpoint) {
+.ships {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 30vh;
-  }
-  @media only screen and (min-width: $l-breakpoint) {
-    width: 50vh;
-    height: 25vh;
+
+    @media only screen and (min-width: $m-breakpoint) {
+      width: 30vh;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      width: 50vh;
+      height: 25vh;
+    }
   }
 
-  &__ships {
+  &__row {
     padding: 10px 0;
     display: flex;
     flex-wrap: wrap;
@@ -255,37 +248,37 @@
       font-size: $xxs-font-size-desktop;
     }
   }
-  &__buttons {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    max-height: 100px;
-    @media only screen and (min-width: $l-breakpoint) {
-      width: 90%;
-    }
-    &-btn {
+}
+.actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
+  @media only screen and (min-width: $l-breakpoint) {
+    width: 90%;
+  }
+  &__button {
+    height: 3vh;
+    width: 45%;
+    font-size: $xxs-font-size-mobile;
+    @include button;
+    @media only screen and (min-width: $m-breakpoint) {
+      font-size: $xs-font-size-mobile;
       height: 3vh;
       width: 45%;
-      font-size: $xxs-font-size-mobile;
-      @extend %button;
-      @media only screen and (min-width: $m-breakpoint) {
-        font-size: $xs-font-size-mobile;
-        height: 3vh;
-        width: 45%;
-      }
-      @media only screen and (min-width: $l-breakpoint) {
-        font-size: $xxs-font-size-desktop;
-        height: 60%;
-        max-height: 40px;
-        width: 40%;
-      }
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+      height: 60%;
+      max-height: 40px;
+      width: 40%;
     }
   }
 }
 
-.homePageButton {
+.link {
   color: $white-color;
   font-weight: $font-bold;
   position: absolute;
@@ -327,7 +320,7 @@
   height: 3%;
   width: 25%;
   z-index: 1;
-  @extend %button;
+  @include button;
   font-size: $xxs-font-size-mobile;
   @media only screen and (min-width: $m-breakpoint) {
     font-size: $xs-font-size-mobile;
