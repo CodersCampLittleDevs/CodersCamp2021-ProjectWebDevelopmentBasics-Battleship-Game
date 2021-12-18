@@ -32,7 +32,9 @@ describe("Using function setTimer", () => {
       ({ input }) => {
         try {
           setTimer(input.minutes, mockFunction);
-        } catch (err) {}
+        } catch (err) {
+          console.log(err);
+        }
         expect(timer.textContent).toEqual(input.textContent);
       }
     );
@@ -48,7 +50,9 @@ describe("Using function setTimer", () => {
       ({ input }) => {
         try {
           setTimer(input.minutes, mockFunction);
-        } catch (err) {}
+        } catch (err) {
+          console.log(err);
+        }
         expect(setTimer).toThrowError;
       }
     );
