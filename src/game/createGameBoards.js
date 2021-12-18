@@ -2,16 +2,16 @@ import { SHIPS_LIST } from "./constants";
 import { getDataFromStorage } from "./../utils/localStorage/localStorage";
 
 const GAME_BOARD_WIDTH = 10;
-const gameBoard = document.querySelectorAll(".board__fields");
-const charWrapper = document.querySelectorAll(".board__characters");
-const numbWrapper = document.querySelectorAll(".board__numbers");
-const shipsList = document.querySelectorAll(".ships__row");
-const playerNameField = document.querySelector(".player");
-const shipsHeading = document.querySelector(".ships__heading");
-const buttons = document.querySelectorAll(".actions__button");
+const GAME_BOARD = document.querySelectorAll(".board__fields");
+const CHARACTER_CONTAINER = document.querySelectorAll(".board__characters");
+const NUMBER_CONTAINER = document.querySelectorAll(".board__numbers");
+const SHIPS_CONTAINER = document.querySelectorAll(".ships__row");
+const PLAYER_NAME_FIELD = document.querySelector(".player");
+const SHIPS_HEADING = document.querySelector(".ships__heading");
+const BUTTONS = document.querySelectorAll(".actions__button");
 
 export const createGameBoards = () => {
-  gameBoard.forEach((e) => {
+  GAME_BOARD.forEach((e) => {
     for (let i = 0; i < GAME_BOARD_WIDTH ** 2; i++) {
       let newField = document.createElement("div");
       newField.classList.add(`board__field`);
@@ -22,7 +22,7 @@ export const createGameBoards = () => {
     }
   });
 
-  charWrapper.forEach((e) => {
+  CHARACTER_CONTAINER.forEach((e) => {
     for (let i = 0; i < GAME_BOARD_WIDTH; i++) {
       let newChar = document.createElement("div");
       newChar.classList.add(`board__characters-char`);
@@ -33,7 +33,7 @@ export const createGameBoards = () => {
     }
   });
 
-  numbWrapper.forEach((e) => {
+  NUMBER_CONTAINER.forEach((e) => {
     for (let i = 0; i < GAME_BOARD_WIDTH; i++) {
       let newNumb = document.createElement("div");
       newNumb.classList.add(`board__numbers-numb`);
@@ -44,7 +44,7 @@ export const createGameBoards = () => {
     }
   });
 
-  shipsList.forEach((target) => {
+  SHIPS_CONTAINER.forEach((target) => {
     SHIPS_LIST.forEach((e) => {
       let newElement = document.createElement("div");
       newElement.classList.add(`ships-ship`);
@@ -64,20 +64,20 @@ export const createGameBoards = () => {
   });
 
   getDataFromStorage(name)
-    ? (playerNameField.innerText = `${getDataFromStorage(name)}`)
-    : (playerNameField.innerText = "Player");
+    ? (PLAYER_NAME_FIELD.innerText = `${getDataFromStorage(name)}`)
+    : (PLAYER_NAME_FIELD.innerText = "Player");
 };
 
 export const checkIsGameStarter = (isGameStarted, START_GAME_BTN) => {
   if (isGameStarted) {
-    shipsHeading.innerText = "Yours ships:";
-    buttons.forEach((element) => {
+    SHIPS_HEADING.innerText = "Yours ships:";
+    BUTTONS.forEach((element) => {
       element.style.display = "none";
     });
     START_GAME_BTN.style.display = "none";
   } else {
-    shipsHeading.innerText = "Deploy Your Ships:";
-    buttons.forEach((element) => {
+    SHIPS_HEADING.innerText = "Deploy Your Ships:";
+    BUTTONS.forEach((element) => {
       element.style.display = "flex";
     });
     START_GAME_BTN.style.display = "flex";
