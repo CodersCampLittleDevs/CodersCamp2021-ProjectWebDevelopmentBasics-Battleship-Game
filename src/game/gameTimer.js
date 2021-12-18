@@ -1,11 +1,8 @@
-import { finishGame } from "./gameResult";
-
 // container class where will be displayed timer. Change classname if it is necessary
-const TIMER = document.querySelector(".timer");
-
 let gameTime;
 
-export function setTimer(time = 10) {
+function setTimer(time = 10, finishGame) {
+  const timer = document.querySelector(".timer");
   let totalSeconds = time * 60;
   let minutes = totalSeconds / 60;
   let seconds = totalSeconds - minutes * 60;
@@ -18,7 +15,7 @@ export function setTimer(time = 10) {
     minutes = "0" + minutes;
   }
 
-  TIMER.textContent = `${minutes}:${seconds}`;
+  timer.textContent = `${minutes}:${seconds}`;
 
   gameTime = setInterval(() => {
     totalSeconds -= 1;
@@ -35,15 +32,17 @@ export function setTimer(time = 10) {
       minutes = "0" + minutes;
     }
 
-    TIMER.textContent = `${minutes}:${seconds}`;
+    timer.textContent = `${minutes}:${seconds}`;
 
     if (totalSeconds === 0) {
-      clearInterval(gameTime);
       finishGame();
     }
   }, 1000);
 }
 
-export function stopTimer() {
+function stopTimer() {
   clearInterval(gameTime);
 }
+
+exports.setTimer = setTimer;
+exports.stopTimer = stopTimer;
