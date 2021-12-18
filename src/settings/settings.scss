@@ -1,6 +1,7 @@
 body {
   margin: 0;
   color: $white-color;
+  font-weight: $font-bold;
 }
 
 .main {
@@ -16,7 +17,7 @@ body {
   align-items: center;
   flex-direction: column;
   height: 100%;
-  width: calc(100% - 30vw);
+  width: 77vw;
   background-color: $black-light-color;
 }
 
@@ -29,8 +30,8 @@ body {
 
   @media (max-width: $m-breakpoint) {
     font-size: $m-font-size-mobile;
-    width: 225px;
-    padding: 15px;
+    width: 190px;
+    padding: 10px;
   }
 }
 
@@ -56,13 +57,17 @@ body {
   font-size: $s-font-size-desktop;
   font-weight: $font-bold;
 
+  &::placeholder {
+    color: #333;
+  }
+
   @media(max-width: $l-breakpoint) {
     width: 350px;
     height: 95px;
   }
 
   @media(max-width: $m-breakpoint) {
-    width: 225px;
+    width: 220px;
     height: 71px;
     font-size: $s-font-size-mobile;
   }
@@ -72,14 +77,17 @@ body {
   background: transparent;
   border: 0;
   width: 150px;
+  cursor: pointer;
   font-size: $m-font-size-desktop;
   border-bottom: 3px solid $white-color;
   color: $white-color;
+  margin-top: 94px;
 
   @media(max-width: $m-breakpoint) {
     width: 101px;
     font-size: $m-font-size-mobile;
     margin-bottom: 25px;
+    margin-top: 22px;
   }
 }
 
