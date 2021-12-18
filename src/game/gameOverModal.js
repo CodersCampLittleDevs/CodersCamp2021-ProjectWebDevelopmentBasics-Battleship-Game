@@ -2,6 +2,17 @@ const MODAL = document.createElement("div");
 MODAL.classList.add("modal");
 
 function displayModal(GAME_RESULT, GAME_WIN_OR_LOSE, POINTS) {
+  if (
+    typeof GAME_RESULT !== "string" ||
+    (GAME_RESULT === "Victory" && GAME_WIN_OR_LOSE === "lose") ||
+    (GAME_RESULT === "Defeat" && GAME_WIN_OR_LOSE === "win") ||
+    typeof GAME_WIN_OR_LOSE !== "string" ||
+    typeof POINTS !== "number"
+  ) {
+    const err = new Error("Input data is wrong");
+    throw err;
+  }
+
   MODAL.innerHTML = `<div class="modal__content">
                         <h2 class="modal__settlement">${GAME_RESULT}!</h2>
                         <h3 class="modal__result">You ${GAME_WIN_OR_LOSE} with ${POINTS} points</h3>
