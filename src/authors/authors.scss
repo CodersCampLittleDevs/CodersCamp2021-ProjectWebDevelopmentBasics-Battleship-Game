@@ -1,17 +1,9 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .main {
-  font-family: $lato-font, sans-serif;
   color: $white-color;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 90vw;
   position: relative;
   overflow: hidden;
-  background-image: $background-image-path;
 
   .pop {
     background-color: $black-light-color;
@@ -21,29 +13,43 @@
     transform: translate(-50%, -50%);
     width: 60%;
     height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    @media screen and(min-width:$l-breakpoint ) {
+      width: 65vw;
+    }
 
     .title {
-      text-align: center;
-      font-size: $l-font-size-desktop;
+      font-size: $m-font-size-mobile;
       margin-top: 20px;
+      border-bottom: 1px solid $white-color;
+      width: 300px;
+      @media screen and (min-width: $m-breakpoint) {
+        font-size: $l-font-size-desktop;
+      }
+    }
 
-      .menu {
+    .menu {
+      text-decoration: none;
+      list-style-type: none;
+
+      .link--github {
+        margin-top: 20px;
+
+        padding: 10px;
         text-decoration: none;
-        list-style-type: none;
+        font-size: $xs-font-size-mobile;
+        color: $white-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-        .link--github {
-          margin-top: 20px;
-
-          padding: 20px;
-          text-decoration: none;
-          font-size: $xxs-font-size-desktop;
-          color: $white-color;
-          display: flex;
-          display: flex;
-          flex-direction: column;
-          text-align: center;
-          justify-content: center;
-          cursor: pointer;
+        cursor: pointer;
+        @media screen and(min-width: $m-breakpoint) {
+          font-size: $xs-font-size-desktop;
         }
       }
     }
@@ -53,17 +59,17 @@
 .return {
   color: $white-color;
   text-decoration: none;
-  font-size: $l-font-size-desktop;
+  font-size: $s-font-size-mobile;
   position: absolute;
-  bottom: 30px;
-  right: 40px;
-}
-
-@media (max-width: $m-breakpoint) {
-  .title {
-    font-size: $l-font-size-mobile;
-  }
-  .return {
-    font-size: $l-font-size-mobile;
+  bottom: 50px;
+  right: 95px;
+  transition: all 0.2s ease-in-out;
+  @media screen and(min-width: $m-breakpoint) {
+    font-size: $s-font-size-desktop;
+    bottom: 30px;
+    right: 40px;
+    &:hover {
+      transform: scale(1.3);
+    }
   }
 }

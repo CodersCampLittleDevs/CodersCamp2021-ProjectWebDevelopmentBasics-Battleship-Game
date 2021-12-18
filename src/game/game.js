@@ -1,8 +1,10 @@
-import "./game.scss";
-import "../styles.scss";
+import { setTimer, stopTimer } from "./gameTimer";
+import { getResult } from "./gameResult";
+import { displayModal } from "./gameOverModal";
 import { createGameBoards, checkIfGameStarted } from "./createGameBoards";
-import { finishGame } from "./gameResult";
-import { setTimer } from "./gameTimer";
+import "../styles.scss";
+import "./game.scss";
+import "./gameOverModal.scss";
 
 const START_GAME_BTN = document.querySelector(".button--start");
 let isGameStarted = false;

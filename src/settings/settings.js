@@ -12,7 +12,7 @@ const onButtonClick = () => {
   setDataInStorage("playerName", INPUT.value);
 };
 
-function setPlayerName() {
+const setPlayerName = () => {
   
   const playerName = getDataFromStorage("playerName");
 

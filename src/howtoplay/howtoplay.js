@@ -1,1 +1,2 @@
-import styles from "./howtoplay.scss";
+import "./howtoplay.scss";
+import "../styles.scss";
