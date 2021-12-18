@@ -1,24 +1,11 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-font-family: $lato-font, sans-serif;
-  color:$white-color;
-}
-
-
-
 .main{
-  
+  color:$white-color;
     min-height:100vh;
   width: 90vw;
   position: relative;
   overflow: hidden;
 
- 
-
-
-  .pop{
+ .pop{
  
     background-color: $black-light-color;
 position: absolute;
@@ -36,8 +23,7 @@ position: absolute;
   width:65vw;
 }
 
-
- .title{
+.title{
   
   font-size: $m-font-size-mobile;
   margin-top: 20px;
@@ -72,8 +58,6 @@ list-style-type: none;
 }
 }
   }
-
-
 
 .return{ 
   color: $white-color;
