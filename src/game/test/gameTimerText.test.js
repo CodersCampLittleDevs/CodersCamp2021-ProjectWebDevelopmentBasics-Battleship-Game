@@ -25,22 +25,31 @@ describe("Using function setTimer", () => {
   describe("parameteres provided", () => {
     test.each`
       input
-      ${{ minutes: 2, textContent: "02:00", isValid: true }}
-      ${{ minutes: undefined, textContent: "10:00", isValid: true }}
-      ${{ minutes: 0.5, textContent: "error", isValid: false }}
-      ${{ minutes: true, textContent: "error", isValid: false }}
-      ${{ minutes: "test", textContent: "error", isValid: false }}
+      ${{ minutes: 2, textContent: "02:00" }}
+      ${{ minutes: undefined, textContent: "10:00" }}
     `(
       "returns $input.textContent when first parameter is $input.minutes at the beginning of game",
       ({ input }) => {
         try {
           setTimer(input.minutes, mockFunction);
         } catch (err) {}
-        if (input.isValid) {
-          expect(timer.textContent).toEqual(input.textContent);
-        } else {
-          expect(setTimer).toThrowError;
-        }
+        expect(timer.textContent).toEqual(input.textContent);
+      }
+    );
+  });
+  describe("parameteres provided", () => {
+    test.each`
+      input
+      ${{ minutes: 0.5, textContent: "error" }}
+      ${{ minutes: true, textContent: "error" }}
+      ${{ minutes: "test", textContent: "error" }}
+    `(
+      "returns $input.textContent when first parameter is number smaller than 1, bigger than 60 or another type",
+      ({ input }) => {
+        try {
+          setTimer(input.minutes, mockFunction);
+        } catch (err) {}
+        expect(setTimer).toThrowError;
       }
     );
   });
