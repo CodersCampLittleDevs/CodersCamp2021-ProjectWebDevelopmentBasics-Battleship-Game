@@ -1,6 +1,6 @@
 import "./game.scss";
 import "../styles.scss";
-import { createGameBoards, checkIsGameStarter } from "./createGameBoards";
+import { createGameBoards, checkIfGameStarted } from "./createGameBoards";
 import { finishGame } from "./gameResult";
 import { setTimer } from "./gameTimer";
 
@@ -9,8 +9,8 @@ let isGameStarted = false;
 
 START_GAME_BTN.addEventListener("click", function () {
   isGameStarted = !isGameStarted;
-  checkIsGameStarter(isGameStarted, START_GAME_BTN);
+  checkIfGameStarted(isGameStarted, START_GAME_BTN);
 });
 
 createGameBoards();
-checkIsGameStarter(isGameStarted);
+checkIfGameStarted(isGameStarted);

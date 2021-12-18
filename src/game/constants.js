@@ -4,7 +4,7 @@ export const SHIPS_LIST = [
     size: 5,
   },
   {
-    shipName: "	Battleship",
+    shipName: "Battleship",
     size: 4,
   },
   {

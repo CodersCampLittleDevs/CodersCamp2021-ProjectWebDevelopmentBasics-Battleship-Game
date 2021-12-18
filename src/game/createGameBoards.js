@@ -68,7 +68,7 @@ export const createGameBoards = () => {
     : (PLAYER_NAME_FIELD.innerText = "Player");
 };
 
-export const checkIsGameStarter = (isGameStarted, START_GAME_BTN) => {
+export const checkIfGameStarted = (isGameStarted, START_GAME_BTN) => {
   if (isGameStarted) {
     SHIPS_HEADING.innerText = "Yours ships:";
     BUTTONS.forEach((element) => {
