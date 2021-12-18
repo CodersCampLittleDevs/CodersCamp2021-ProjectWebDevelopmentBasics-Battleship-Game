@@ -1,6 +1,7 @@
 body {
   margin: 0;
   color: $white-color;
+  font-weight: $font-bold;
 }
 
 .main {
@@ -16,26 +17,37 @@ body {
   align-items: center;
   flex-direction: column;
   height: 100%;
-  width: 50%;
+  width: 77vw;
   background-color: $black-light-color;
 }
 
 .section__header {
   font-size: $l-font-size-desktop;
   border-bottom: 5px solid $white-color;
-  width: 250px;
+  width: 300px;
   text-align: center;
+  padding-bottom: 15px;
+
+  @media (max-width: $m-breakpoint) {
+    font-size: $m-font-size-mobile;
+    width: 190px;
+    padding: 10px;
+  }
 }
 
 .section__input {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;  
 }
 
 .input__label {
   font-size: $m-font-size-desktop;
   margin-bottom: 40px;
+
+  @media(max-width: $m-breakpoint) {
+    font-size: $m-font-size-mobile;
+  }
 }
 
 .section__input--playerName {
@@ -44,22 +56,52 @@ body {
   text-align: center;
   font-size: $s-font-size-desktop;
   font-weight: $font-bold;
+
+  &::placeholder {
+    color: #333;
+  }
+
+  @media(max-width: $l-breakpoint) {
+    width: 350px;
+    height: 95px;
+  }
+
+  @media(max-width: $m-breakpoint) {
+    width: 220px;
+    height: 71px;
+    font-size: $s-font-size-mobile;
+  }
 }
 
 .section__button--save {
   background: transparent;
-  margin: 10px;
   border: 0;
+  width: 150px;
+  cursor: pointer;
   font-size: $m-font-size-desktop;
-  border-bottom: 1px solid $white-color;
+  border-bottom: 3px solid $white-color;
   color: $white-color;
+  margin-top: 94px;
+
+  @media(max-width: $m-breakpoint) {
+    width: 101px;
+    font-size: $m-font-size-mobile;
+    margin-bottom: 25px;
+    margin-top: 22px;
+  }
 }
 
 .section__link--return {
-  font-size: $s-font-size-desktop;
+  font-size: $m-font-size-desktop;
   text-decoration: none;
   align-self: flex-end;
   margin-right: 79px;
+
+  @media(max-width: $m-breakpoint) {
+    font-size: $s-font-size-mobile;
+    margin-right: 0;
+    align-self: center;
+  }
 }
 
 .section__link--return:visited {
