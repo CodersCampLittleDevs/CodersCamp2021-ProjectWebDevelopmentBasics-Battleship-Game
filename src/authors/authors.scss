@@ -1,84 +1,75 @@
-.main{
-  color:$white-color;
-    min-height:100vh;
+.main {
+  color: $white-color;
+  min-height: 100vh;
   width: 90vw;
   position: relative;
   overflow: hidden;
 
- .pop{
- 
+  .pop {
     background-color: $black-light-color;
-position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- width: 60%;
- height: 80%;
- display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-@media screen and(min-width:$l-breakpoint ){
-  width:65vw;
-}
-
-.title{
-  
-  font-size: $m-font-size-mobile;
-  margin-top: 20px;
-border-bottom: 1px solid $white-color;
-width: 300px;
-@media screen and (min-width: $m-breakpoint) {
-      font-size: $l-font-size-desktop;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    @media screen and(min-width:$l-breakpoint ) {
+      width: 65vw;
     }
-}
 
- .menu{
-  text-decoration: none;
-list-style-type: none;
+    .title {
+      font-size: $m-font-size-mobile;
+      margin-top: 20px;
+      border-bottom: 1px solid $white-color;
+      width: 300px;
+      @media screen and (min-width: $m-breakpoint) {
+        font-size: $l-font-size-desktop;
+      }
+    }
 
-.link--github{
-  margin-top:20px;
-  
-      padding: 10px;
+    .menu {
       text-decoration: none;
-      font-size:$xs-font-size-mobile;
-      color: $white-color; 
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    
-      cursor: pointer;
-    @media screen and(min-width: $m-breakpoint) {
-      font-size: $xs-font-size-desktop;
+      list-style-type: none;
 
+      .link--github {
+        margin-top: 20px;
+
+        padding: 10px;
+        text-decoration: none;
+        font-size: $xs-font-size-mobile;
+        color: $white-color;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+        @media screen and(min-width: $m-breakpoint) {
+          font-size: $xs-font-size-desktop;
+        }
+      }
     }
-}
-}
-}
   }
+}
 
-.return{ 
+.return {
   color: $white-color;
   text-decoration: none;
-  font-size:$s-font-size-mobile ;
+  font-size: $s-font-size-mobile;
   position: absolute;
   bottom: 50px;
   right: 95px;
-transition: all 0.2s ease-in-out;
- @media screen and(min-width: $m-breakpoint) {
+  transition: all 0.2s ease-in-out;
+  @media screen and(min-width: $m-breakpoint) {
     font-size: $s-font-size-desktop;
-    bottom:30px;
-    right:40px;
-     &:hover {
+    bottom: 30px;
+    right: 40px;
+    &:hover {
       transform: scale(1.3);
     }
   }
 }
-
-
-
-
-
-
