@@ -7,7 +7,8 @@
     "clean": "rm dist/bundle.js",
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
-    "serve": "webpack serve"
+    "serve": "webpack serve",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -23,10 +24,12 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
+    "@testing-library/jest-dom": "^5.16.1",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "mini-css-extract-plugin": "^2.4.5",
     "node-sass": "^6.0.1",
     "sass-loader": "^12.3.0",

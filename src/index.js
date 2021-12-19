@@ -1,1 +1,3 @@
-import styles from "./styles.scss";
+import globalStyles from "./styles.scss";
+
+import styles from "./index.scss";

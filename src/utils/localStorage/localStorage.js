@@ -3,5 +3,5 @@ export function setDataInStorage(key, value) {
 }
 
 export function getDataFromStorage(key) {
-  localStorage.getItem(key);
+  return localStorage.getItem(key);
 }
