@@ -8,7 +8,7 @@ const NUMBER_CONTAINER = document.querySelectorAll(".board__numbers");
 const SHIPS_CONTAINER = document.querySelectorAll(".ships__row");
 const PLAYER_NAME_FIELD = document.querySelector(".player");
 const SHIPS_HEADING = document.querySelector(".ships__heading");
-const BUTTONS = document.querySelectorAll(".actions__button");
+const BUTTON = document.querySelector(".actions__button");
 
 export const createGameBoards = () => {
   GAME_BOARD.forEach((e) => {
@@ -45,9 +45,10 @@ export const createGameBoards = () => {
   });
 
   SHIPS_CONTAINER.forEach((target) => {
-    SHIPS_LIST.forEach((e) => {
+    SHIPS_LIST.forEach((e, index) => {
       let newElement = document.createElement("div");
       newElement.classList.add(`ships-ship`);
+      newElement.dataset.name = SHIPS_LIST[index].shipName;
       window.addEventListener("resize", () => {
         let windowWidth = window.innerWidth;
         if (windowWidth > 1399) {
@@ -71,15 +72,11 @@ export const createGameBoards = () => {
 export const checkIfGameStarted = (isGameStarted, START_GAME_BTN) => {
   if (isGameStarted) {
     SHIPS_HEADING.innerText = "Yours ships:";
-    BUTTONS.forEach((element) => {
-      element.style.display = "none";
-    });
+    BUTTON.style.display = "none";
     START_GAME_BTN.style.display = "none";
   } else {
     SHIPS_HEADING.innerText = "Deploy Your Ships:";
-    BUTTONS.forEach((element) => {
-      element.style.display = "flex";
-    });
+    BUTTON.style.display = "flex";
     START_GAME_BTN.style.display = "flex";
   }
 };
