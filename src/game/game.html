@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
+    <title>Battleships game</title>
+</head>
+<body>
+    <main class="wrapper">
+        <div class="main">
+            <button class="button--start">Let's play!</button>
+            <div class="timer">
+                <span class="timer__counter">10:00</span>
+            </div>
+            <div class="board__wrapper">
+                <div class="board__player">
+                    <p class="board__player-name player">Player</p>
+                </div>
+                <div class="board">
+                    <div class="board__fields"></div>
+                    <div class="board__characters"></div>
+                    <div class="board__numbers"></div>
+                </div>
+                <div class="ships__wrapper">
+                    <p class="ships__heading">Your ships:</p>
+                    <div class="ships__row"></div>
+                    <div class="actions">
+                        <button class="actions__button">Rotate</button>
+                        <button class="actions__button">Randomize</button>
+                    </div>
+                </div>
+            </div>
+            <div class="board__wrapper">
+                <div class="board__player">
+                    <p class="board__player-name">Computer</p>
+                </div>
+                <div class="board ">
+                    <div class="board__fields"></div>
+                    <div class="board__characters "></div>
+                    <div class="board__numbers "></div>
+                </div>
+                <div class="ships__wrapper">
+                    <p class="ships__heading ">Computer ships:</p>
+                    <div class="ships__row"></div>
+                </div>
+            </div>
+            <a class="link" href="index.html">Return</a>
+        </div>
+    </main>
 
-  <body>
-    <div>game</div>
-
-    <!-- @TODO: Temporary paragraph for displaying timer -->
-    <p class="timer"></p>
-  </body>
+</body>
 </html>

@@ -1,8 +1,6 @@
-import { displayModal } from "./gameOverModal";
-import { stopTimer } from "./gameTimer";
-import { getDataFromStorage } from "../utils/localStorage/localStorage.js";
+const { getDataFromStorage } = require("../utils/localStorage/localStorage.js");
 
-export function finishGame() {
+function getResult() {
   let settlement;
   let result;
   const computerPoints = getDataFromStorage("computerPoints");
@@ -14,6 +12,7 @@ export function finishGame() {
     settlement = "Defeat";
     result = "lose";
   }
-  stopTimer();
-  displayModal(settlement, result, userPoints);
+  return { settlement, result, userPoints };
 }
+
+exports.getResult = getResult;

@@ -5,6 +5,7 @@ dist/
 node_modules/
 *.css.map
 package-lock.json
+css/
 
 # OS generated files
 .DS_Store?

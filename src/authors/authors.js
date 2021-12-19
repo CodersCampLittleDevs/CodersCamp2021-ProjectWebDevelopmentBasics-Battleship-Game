@@ -1,1 +1,2 @@
-import styles from './scss/style.scss';
+import  './authors.scss';
+import '../styles.scss';
