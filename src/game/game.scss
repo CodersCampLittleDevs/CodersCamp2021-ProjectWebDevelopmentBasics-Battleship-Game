@@ -108,6 +108,20 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    &--computer {
+      position: relative;
+      &.overlay {
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color: $black-light-color;
+        }
+      }
+    }
   }
 
   &__field {
