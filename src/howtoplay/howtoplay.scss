@@ -13,8 +13,12 @@
   flex-direction: column;
   justify-content: space-between;
   margin: auto;
-  @media screen and (min-width: $l-breakpoint) {
-    width: 65vw;
+  width: 80%;
+  @media screen and(orientation: landscape) {
+    width: 95%;
+  }
+  @media screen and (min-width: $m-breakpoint) {
+    max-width: 950px;
   }
 }
 .container {
@@ -22,41 +26,50 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-
   &__title {
     font-size: $m-font-size-mobile;
     font-weight: 700;
     padding: 0 10px 10px 10px;
     border-bottom: 5px solid $white-color;
     text-align: center;
-    margin-bottom: 5%;
-    margin-top: 5%;
+    margin: 20px 0;
     @media screen and (min-width: $m-breakpoint) {
       font-size: $l-font-size-desktop;
+      margin: 60px 0 100px 0;
     }
   }
 
   &__instruction {
-    width: 90%;
     text-align: center;
     font-size: $xxs-font-size-mobile;
+    padding: 0 16px;
     @media screen and(min-width: $m-breakpoint) {
-      font-size: $xs-font-size-desktop;
+      font-size: $xxs-font-size-desktop;
+    }
+    @media screen and (min-width: $xl-breakpoint) {
+      padding: 0 190px;
     }
   }
 }
 
 .return {
-  align-self: flex-end;
+  align-self: center;
+  padding-bottom: 15px;
   font-size: $s-font-size-mobile;
-  margin-bottom: 5%;
-  margin-right: 5%;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
-  @media screen and(min-width: $m-breakpoint) {
+  @media screen and(orientation:landscape) {
+    padding: 16px 0;
+  }
+  @media screen and(min-width: $xl-breakpoint) {
+    align-self: flex-end;
     font-size: $s-font-size-desktop;
+    margin-bottom: 80px;
+    margin-right: 80px;
     &:hover {
+      border-bottom: 4px $white-color solid;
       transform: scale(1.3);
+      padding-bottom: 10px;
     }
   }
 }
