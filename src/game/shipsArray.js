@@ -1,190 +1,25 @@
-let PLAYER_SHIPS = {
-  ships: [
-    {
-      name: "Carrier",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
+import { SHIPS_LIST } from "./constants";
+let PLAYER_SHIPS = generateShips();
+let COMPUTER_SHIPS = generateShips();
+
+export function generateShips() {
+  let shipsObject = {};
+  let shipsArray = [];
+  for (const ship of SHIPS_LIST) {
+    let fields = [];
+    for (let i = 0; i < ship.size; i++) {
+      fields.push({
+        name: null,
+        hit: false,
+      });
+    }
+    shipsArray.push({
+      name: ship.shipName,
+      fields,
       sunk: false,
-    },
-    {
-      name: "Battleship",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-    {
-      name: "Destroyer",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-    {
-      name: "Submarine",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-    {
-      name: "Patrol Boat",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-  ],
-  sunk: false,
-};
-let COMPUTER_SHIPS = {
-  ships: [
-    {
-      name: "Carrier",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-    {
-      name: "Battleship",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-    {
-      name: "Destroyer",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-    {
-      name: "Submarine",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-    {
-      name: "Patrol Boat",
-      fields: [
-        {
-          name: null,
-          hit: false,
-        },
-      ],
-      sunk: false,
-    },
-  ],
-  sunk: false,
-};
+    });
+  }
+  shipsObject.ships = shipsArray;
+  shipsObject.sunk = false;
+  return shipsObject;
+}
