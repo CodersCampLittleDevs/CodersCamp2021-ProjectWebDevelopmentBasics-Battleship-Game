@@ -53,10 +53,8 @@ const addShip = () => {
   for (let shipIndex = 0; shipIndex < SHIPS_LIST.length; shipIndex++) {
     const direction = rollDirection();
     if (direction === "horizontal") {
-      console.log(direction);
       positionShipHorizontally(shipIndex, direction);
     } else {
-      console.log(direction);
       positionShipVertically(shipIndex, direction);
     }
   }
