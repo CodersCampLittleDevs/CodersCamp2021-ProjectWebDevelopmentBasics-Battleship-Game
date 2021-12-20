@@ -2,6 +2,7 @@ import { setTimer, stopTimer } from "./gameTimer";
 import { getResult } from "./gameResult";
 import { displayModal } from "./gameOverModal";
 import { createGameBoards, checkIfGameStarted } from "./createGameBoards";
+import { generateShipsArray } from "./shipsArray";
 import "../styles.scss";
 import "./game.scss";
 import "./gameOverModal.scss";
@@ -17,4 +18,4 @@ START_GAME_BTN.addEventListener("click", function () {
 });
 
 createGameBoards();
-checkIfGameStarted(isGameStarted);
+checkIfGameStarted(isGameStacrted, START_GAME_BTN);

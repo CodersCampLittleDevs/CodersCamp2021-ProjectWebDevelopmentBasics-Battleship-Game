@@ -1,25 +1,27 @@
 import { SHIPS_LIST } from "./constants";
-let PLAYER_SHIPS = generateShips();
-let COMPUTER_SHIPS = generateShips();
+export const generateShipsArray = () => {
+  const ships = {
+    ships: SHIPS_LIST.map((ship) => {
+      return {
+        shipName: ship.shipName,
+        sunk: false,
+        fields: generateShipFields(ship.size),
+      };
+    }),
+    lostAllShips: false,
+  };
+  return ships;
+};
 
-export function generateShips() {
-  let shipsObject = {};
-  let shipsArray = [];
-  for (const ship of SHIPS_LIST) {
-    let fields = [];
-    for (let i = 0; i < ship.size; i++) {
+const generateShipFields = (size) => {
+  const fields = [];
+  Array(size)
+    .fill(0)
+    .forEach((_) => {
       fields.push({
         name: null,
         hit: false,
       });
-    }
-    shipsArray.push({
-      name: ship.shipName,
-      fields,
-      sunk: false,
     });
-  }
-  shipsObject.ships = shipsArray;
-  shipsObject.sunk = false;
-  return shipsObject;
-}
+  return fields;
+};
