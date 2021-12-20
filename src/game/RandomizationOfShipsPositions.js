@@ -3,15 +3,14 @@ import { SHIPS_LIST } from "./constants";
 const GAME_BOARD = document.querySelectorAll(".board__fields");
 
 let gameBoardArray = [];
-let fieldsNamesArr = [];
-let direction;
+let fieldsNamesArray = [];
 let position;
 const GAME_BOARD_WIDTH = 10;
 
 const createFieldsName = () => {
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
-      fieldsNamesArr.push(`${String.fromCharCode(i + 65)}${j + 1}`);
+      fieldsNamesArray.push(`${String.fromCharCode(i + 65)}${j + 1}`);
     }
   }
 };
@@ -30,13 +29,11 @@ const createGameBoardArray = () => {
   }
 };
 
-const directionRoll = () => {
-  Math.floor(Math.random() * 2) === 0
-    ? (direction = "vertical")
-    : (direction = "horizontal");
+const rollDirection = () => {
+  return Math.floor(Math.random() * 2) === 0 ? "vertical" : "horizontal";
 };
 
-const makePosition = (shipIndex) => {
+const createPosition = (shipIndex, direction) => {
   position = [];
   for (let i = 0; i < 2; i++) {
     position.push(Math.floor(Math.random() * GAME_BOARD_WIDTH));
@@ -54,23 +51,25 @@ const makePosition = (shipIndex) => {
 const addShip = () => {
   createGameBoardArray();
   for (let shipIndex = 0; shipIndex < SHIPS_LIST.length; shipIndex++) {
-    directionRoll();
+    const direction = rollDirection();
     if (direction === "horizontal") {
-      horizontalShipPosition(shipIndex);
+      console.log(direction);
+      positionShipHorizontally(shipIndex, direction);
     } else {
-      verticalShipPosition(shipIndex);
+      console.log(direction);
+      positionShipVertically(shipIndex, direction);
     }
   }
 };
 
-const verticalShipPosition = (shipIndex) => {
-  makePosition(shipIndex);
+const positionShipVertically = (shipIndex, direction) => {
+  createPosition(shipIndex, direction);
   let positionsForCheck = [];
   for (let i = 0; i < SHIPS_LIST[shipIndex].size; i++) {
     positionsForCheck.push(gameBoardArray[position[0] + i][position[1]]);
   }
   if (positionsForCheck.some((el) => el.isEmpty === false)) {
-    verticalShipPosition(shipIndex);
+    positionShipVertically(shipIndex);
   } else {
     for (let i = 0; i < SHIPS_LIST[shipIndex].size; i++) {
       gameBoardArray[position[0] + i].fill(
@@ -85,14 +84,14 @@ const verticalShipPosition = (shipIndex) => {
   }
 };
 
-const horizontalShipPosition = (shipIndex) => {
-  makePosition(shipIndex);
+const positionShipHorizontally = (shipIndex, direction) => {
+  createPosition(shipIndex, direction);
   if (
     gameBoardArray[position[0]]
       .slice(position[1], position[1] + SHIPS_LIST[shipIndex].size)
       .some((el) => el.isEmpty === false)
   ) {
-    horizontalShipPosition(shipIndex);
+    positionShipHorizontally(shipIndex);
   } else {
     gameBoardArray[position[0]].fill(
       {
@@ -121,7 +120,7 @@ export const addShipsToBoard = () => {
         gameBoardForMap[i].shipName
       );
     }
-    newField.setAttribute("data-field-name", fieldsNamesArr[i]);
+    newField.setAttribute("data-field-name", fieldsNamesArray[i]);
     newField.dataset.id = i;
     GAME_BOARD[0].appendChild(newField);
   });
@@ -145,7 +144,7 @@ export const addShipsToBoardComputer = () => {
         gameBoardForMap[i].shipName
       );
     }
-    newField.setAttribute("data-field-name", fieldsNamesArr[i]);
+    newField.setAttribute("data-field-name", fieldsNamesArray[i]);
     newField.dataset.id = i;
     GAME_BOARD[1].appendChild(newField);
   });
