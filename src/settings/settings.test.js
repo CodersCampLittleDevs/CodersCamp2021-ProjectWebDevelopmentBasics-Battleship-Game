@@ -11,16 +11,21 @@ document.body.append(input);
 
 const { setPlayerName, onButtonClick } = require("./settings");
 
-describe("Using function to set and get data from local storage", () => {
+describe("Using function onButtonClick and setPlayerName", () => {
+
+  describe( "onButtonClick", () => {
   it("should set player's name on button click", () => {
     input.value = "test-name";
     onButtonClick();
     expect(localStorage.getItem("playerName")).toBe("test-name");
   });
+});
 
+describe( "setPlayerName", () => {
   it("should get player's name into input from storage", () => {
     localStorage.setItem("playerName", "test-name");
     setPlayerName();
     expect(input.value).toBe("test-name");
   });
+})
 });
