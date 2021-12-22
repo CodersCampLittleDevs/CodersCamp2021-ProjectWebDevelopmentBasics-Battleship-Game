@@ -4,7 +4,6 @@ const GAME_BOARD = document.querySelectorAll(".board__fields");
 
 let gameBoardArray = [];
 let fieldsNamesArray = [];
-let position;
 const GAME_BOARD_WIDTH = 10;
 
 const createFieldsName = () => {
@@ -34,7 +33,7 @@ const rollDirection = () => {
 };
 
 const createPosition = (shipIndex, direction) => {
-  position = [];
+  let position = [];
   for (let i = 0; i < 2; i++) {
     position.push(Math.floor(Math.random() * GAME_BOARD_WIDTH));
   }
@@ -46,10 +45,10 @@ const createPosition = (shipIndex, direction) => {
   } else if (position[0] + SHIPS_LIST[shipIndex].size > GAME_BOARD_WIDTH) {
     position[0] = Math.abs(position[0] - SHIPS_LIST[shipIndex].size);
   }
+  return position;
 };
 
-const addShip = () => {
-  createGameBoardArray();
+const placeShipsOnBoard = () => {
   for (let shipIndex = 0; shipIndex < SHIPS_LIST.length; shipIndex++) {
     const direction = rollDirection();
     if (direction === "horizontal") {
@@ -61,7 +60,7 @@ const addShip = () => {
 };
 
 const positionShipVertically = (shipIndex, direction) => {
-  createPosition(shipIndex, direction);
+  const position = createPosition(shipIndex, direction);
   let positionsForCheck = [];
   for (let i = 0; i < SHIPS_LIST[shipIndex].size; i++) {
     positionsForCheck.push(gameBoardArray[position[0] + i][position[1]]);
@@ -83,7 +82,7 @@ const positionShipVertically = (shipIndex, direction) => {
 };
 
 const positionShipHorizontally = (shipIndex, direction) => {
-  createPosition(shipIndex, direction);
+  const position = createPosition(shipIndex, direction);
   if (
     gameBoardArray[position[0]]
       .slice(position[1], position[1] + SHIPS_LIST[shipIndex].size)
@@ -102,9 +101,10 @@ const positionShipHorizontally = (shipIndex, direction) => {
   }
 };
 
-export const addShipsToBoard = () => {
-  addShip();
-  GAME_BOARD[0].innerHTML = "";
+export const addShipsToBoard = (isPlayer) => {
+  createGameBoardArray();
+  placeShipsOnBoard();
+  GAME_BOARD[isPlayer ? 0 : 1].innerHTML = "";
   let gameBoardForMap = gameBoardArray.flat(Infinity);
   gameBoardForMap.map((_, i) => {
     let newField = document.createElement("div");
@@ -120,30 +120,6 @@ export const addShipsToBoard = () => {
     }
     newField.setAttribute("data-field-name", fieldsNamesArray[i]);
     newField.dataset.id = i;
-    GAME_BOARD[0].appendChild(newField);
-  });
-};
-
-/// only for test, show computer ships
-
-export const addShipsToBoardComputer = () => {
-  addShip();
-  GAME_BOARD[1].innerHTML = "";
-  let gameBoardForMap = gameBoardArray.flat(Infinity);
-  gameBoardForMap.map((_, i) => {
-    let newField = document.createElement("div");
-    newField.classList.add(`board__field`);
-    if (gameBoardForMap[i].isEmpty === false) {
-      newField.classList.add(`ship`);
-    }
-    if (gameBoardForMap[i].shipName != "") {
-      newField.setAttribute(
-        "data-ship-name-board",
-        gameBoardForMap[i].shipName
-      );
-    }
-    newField.setAttribute("data-field-name", fieldsNamesArray[i]);
-    newField.dataset.id = i;
-    GAME_BOARD[1].appendChild(newField);
+    GAME_BOARD[isPlayer ? 0 : 1].appendChild(newField);
   });
 };

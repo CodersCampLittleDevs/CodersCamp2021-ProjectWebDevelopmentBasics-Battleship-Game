@@ -2,10 +2,7 @@ import { setTimer, stopTimer } from "./gameTimer";
 import { getResult } from "./gameResult";
 import { displayModal } from "./gameOverModal";
 import { createGameBoards, checkIfGameStarted } from "./createGameBoards";
-import {
-  addShipsToBoard,
-  addShipsToBoardComputer,
-} from "./RandomizationOfShipsPositions";
+import { addShipsToBoard } from "./randomizationOfShipsPositions";
 import "../styles.scss";
 import "./game.scss";
 import "./gameOverModal.scss";
@@ -20,11 +17,11 @@ START_GAME_BTN.addEventListener("click", function () {
 });
 
 RANDOMIZE_BTN.addEventListener("click", function () {
-  addShipsToBoard();
+  addShipsToBoard(true);
 });
 
 createGameBoards();
 checkIfGameStarted(isGameStarted, START_GAME_BTN);
 
 // only for test
-addShipsToBoardComputer();
+addShipsToBoard(false);
