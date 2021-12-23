@@ -1,21 +1,56 @@
 import globalStyles from "../styles.scss";
-
 import styles from "./highscores.scss";
-
 import {
-    setDataInStorage, 
-    getDataFromStorage
+  setDataInStorage, 
+  getDataFromStorage
 } from '../utils/localStorage/localStorage';
+import { displayModal } from "../game/gameOverModal";
 
-const playerName = getDataFromStorage('playerName') || '[]';
-const userPoints = getDataFromStorage('userPoints') || '[]';
-const result = getDataFromStorage('result') || '[]';
+export const saveMatchResult = (matchResult, points) => {
+  const playerName = getDataFromStorage('playerName') ?? 'Player';
+  const row = {name: playerName, score: points, status: matchResult};
+  const highScore = getDataFromStorage('highScore');
+    if (highScore) {
+      const highScores = [...JSON.parse(highScore), row].sort((a, b) => b.score - a.score).slice(0, 10);
+      setDataInStorage('highScore', JSON.stringify(highScores));
+    } else {
+      const newHighScores = [row];
+      setDataInStorage('highScore', JSON.stringify(newHighScores));
+    }
+}
 
-const summary = {player: playerName, score: userPoints, status: result};
+const displayHighScore = () => {
+  const highScores = JSON.parse(getDataFromStorage('highScore'));
+  const names = [...document.querySelectorAll('.table__data-name')];
+  const scores = [...document.querySelectorAll('.table__data-score')];
+  const statuses = [...document.querySelectorAll('.table__data-status')];
 
-const highscores = [...JSON.parse(userPoints), summary]
-  .sort((a, b) => b.score- a.score)
-  .slice(0, 5);
+  names.forEach((name, index) => {
+  console.log( highScores)
+  name.innerHTML = highScores[index].name
+  });
 
-  setDataInStorage('userPoints', JSON.stringify(highscores));
+  scores.forEach((score, index) => {
+  console.log( highScores)
+   score.innerHTML = highScores[index].score
+  });
+
+  statuses.forEach((stat, index) => {
+  console.log( highScores)
+   stat.innerHTML = highScores[index].status
+  });
+}
+
+displayHighScore();
+
+
+
+
+
+
+
+
+
+  
+ 
 
