@@ -11,7 +11,6 @@ document.body.append(input);
 
 const { setPlayerName, onButtonClick } = require("./settings");
 
-describe("Using function onButtonClick and setPlayerName", () => {
 
   describe( "onButtonClick", () => {
   it("should set player's name on button click", () => {
@@ -28,4 +27,3 @@ describe( "setPlayerName", () => {
     expect(input.value).toBe("test-name");
   });
 })
-});
