@@ -17,4 +17,4 @@ START_GAME_BTN.addEventListener("click", function () {
 });
 
 createGameBoards();
-checkIfGameStarted(isGameStarted);
+checkIfGameStarted(isGameStarted, START_GAME_BTN);
