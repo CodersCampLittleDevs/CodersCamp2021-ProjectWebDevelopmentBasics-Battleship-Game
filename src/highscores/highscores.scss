@@ -27,7 +27,7 @@
     text-align: center;
     border-collapse: collapse;
     margin-top: 50px;
-    &__heading {
+    .header__cell {
         font-size: $s-font-size-desktop;
         font-weight: bold;
         border-bottom: 3px solid $white-color;
@@ -51,7 +51,7 @@
             border-right: 3px solid $white-color;
         }
     }
-    &__data {
+    .row__cell {
         font-size: $xs-font-size-desktop;
         @media screen and(max-width: $m-breakpoint) {  
             font-size: $xs-font-size-mobile;
