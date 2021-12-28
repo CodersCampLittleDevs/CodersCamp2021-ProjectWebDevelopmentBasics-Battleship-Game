@@ -1,11 +1,12 @@
 import { SHIPS_LIST } from "./constants";
-export const generateShipsArray = () => {
+export const generateShipsArray = (board) => {
+  let gameBoard = board.flat(Infinity);
   const ships = {
     ships: SHIPS_LIST.map((ship) => {
       return {
         shipName: ship.shipName,
         sunk: false,
-        fields: generateShipFields(ship.size),
+        fields: generateShipFields(ship, gameBoard),
       };
     }),
     lostAllShips: false,
@@ -13,15 +14,16 @@ export const generateShipsArray = () => {
   return ships;
 };
 
-const generateShipFields = (size) => {
+const generateShipFields = (ship, gameboard) => {
   const fields = [];
-  Array(size)
-    .fill(0)
-    .forEach((_) => {
-      fields.push({
-        name: null,
-        hit: false,
-      });
+  const shipFields = gameboard.filter(
+    (field) => field.shipName === ship.shipName
+  );
+  for (let i = 0; i < shipFields.length; i++) {
+    fields.push({
+      name: shipFields[i].fieldName,
+      hit: false,
     });
+  }
   return fields;
 };
