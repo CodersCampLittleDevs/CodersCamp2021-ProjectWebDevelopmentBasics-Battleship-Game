@@ -25,8 +25,6 @@ export const saveMatchResult = (matchResult, points) => {
   }
 };
 
-saveMatchResult();
-
 const displayHighScores = () => {
   const highScores = JSON.parse(getDataFromStorage("highScores"));
   for (let i = 0; i < 10; i++) {
