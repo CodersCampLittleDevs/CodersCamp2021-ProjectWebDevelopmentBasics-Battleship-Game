@@ -110,17 +110,6 @@
     flex-wrap: wrap;
     &--computer {
       position: relative;
-      &.overlay {
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background-color: $black-light-color;
-        }
-      }
     }
   }
 
@@ -349,4 +338,16 @@
 
 .ship {
   background-color: $black-dark-color;
+}
+
+.overlay {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $black-light-color;
+  }
 }
