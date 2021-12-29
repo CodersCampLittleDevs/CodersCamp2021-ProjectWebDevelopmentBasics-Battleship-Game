@@ -130,7 +130,7 @@ export const addShipsToBoard = (isPlayer) => {
 };
 
 const separateShipsFromEmptyFields = (board) => {
-  let emptyFields = board.flat(Infinity).filter((field) => !field.isEmpty);
-  let ships = board.flat(Infinity).filter((field) => field.isEmpty);
+  let emptyFields = board.flat(Infinity).filter((field) => field.isEmpty);
+  let ships = board.flat(Infinity).filter((field) => !field.isEmpty);
   return [emptyFields, ships];
 };
