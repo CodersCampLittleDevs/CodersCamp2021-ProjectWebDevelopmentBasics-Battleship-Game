@@ -65,7 +65,7 @@ const positionShipVertically = (shipIndex, direction) => {
   for (let i = 0; i < SHIPS_LIST[shipIndex].size; i++) {
     positionsForCheck.push(gameBoardArray[position[0] + i][position[1]]);
   }
-  if (positionsForCheck.some((el) => el.isEmpty === false)) {
+  if (positionsForCheck.some((el) => !el.isEmpty)) {
     positionShipVertically(shipIndex);
   } else {
     for (let i = 0; i < SHIPS_LIST[shipIndex].size; i++) {
@@ -88,9 +88,7 @@ const positionShipHorizontally = (shipIndex, direction) => {
   if (
     gameBoardArray[position[0]]
       .slice(position[1], position[1] + SHIPS_LIST[shipIndex].size)
-      .some((el) => {
-        return typeof el === Object && el.isEmpty === false;
-      })
+      .some((el) => el === Object && !el.isEmpty)
   ) {
     positionShipHorizontally(shipIndex);
   } else {
@@ -114,7 +112,7 @@ export const addShipsToBoard = (isPlayer) => {
     gameBoardForMap.map((_, i) => {
       let newField = document.createElement("div");
       newField.classList.add(`board__field`);
-      if (gameBoardForMap[i].isEmpty === false) {
+      if (!gameBoardForMap[i].isEmpty) {
         newField.classList.add(`ship`);
       }
       if (gameBoardForMap[i].shipName != "") {
@@ -132,9 +130,7 @@ export const addShipsToBoard = (isPlayer) => {
 };
 
 const separateShipsFromEmptyFields = (board) => {
-  let emptyFields = board
-    .flat(Infinity)
-    .filter((field) => field.isEmpty === true);
-  let ships = board.flat(Infinity).filter((field) => field.isEmpty !== true);
+  let emptyFields = board.flat(Infinity).filter((field) => !field.isEmpty);
+  let ships = board.flat(Infinity).filter((field) => field.isEmpty);
   return [emptyFields, ships];
 };
