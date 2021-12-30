@@ -66,7 +66,7 @@ const positionShipVertically = (shipIndex, direction) => {
     positionsForCheck.push(gameBoardArray[position[0] + i][position[1]]);
   }
   if (positionsForCheck.some((el) => !el.isEmpty)) {
-    positionShipVertically(shipIndex);
+    positionShipVertically(shipIndex, direction);
   } else {
     for (let i = 0; i < SHIPS_LIST[shipIndex].size; i++) {
       gameBoardArray[position[0] + i].fill(
@@ -88,9 +88,9 @@ const positionShipHorizontally = (shipIndex, direction) => {
   if (
     gameBoardArray[position[0]]
       .slice(position[1], position[1] + SHIPS_LIST[shipIndex].size)
-      .some((el) => el === Object && !el.isEmpty)
+      .some((el) => !el.isEmpty)
   ) {
-    positionShipHorizontally(shipIndex);
+    positionShipHorizontally(shipIndex, direction);
   } else {
     for (let i = 0; i < SHIPS_LIST[shipIndex].size; i++) {
       gameBoardArray[position[0]][position[1] + i] = {
