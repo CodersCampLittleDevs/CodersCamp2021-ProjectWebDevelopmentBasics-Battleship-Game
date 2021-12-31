@@ -11,13 +11,21 @@ import "./gameOverModal.scss";
 
 const RANDOMIZE_BTN = document.querySelector(".actions__button-randomize");
 
+let playerState;
+let playerShips;
+let playerEmptyFields;
+
+let computerState;
+let computerShips;
+let computerEmptyFields;
+
 createGameBoards();
 checkIfGameStarted(isGameStarted, START_GAME_BTN);
 START_GAME_BTN.addEventListener("click", startGame);
 
 RANDOMIZE_BTN.addEventListener("click", function () {
-  addShipsToBoard(true);
+  [playerEmptyFields, playerShips] = addShipsToBoard(true);
+  playerState = generateShipsArray(playerShips);
 });
-
-// only for test
-addShipsToBoard(false);
+[computerEmptyFields, computerShips] = addShipsToBoard(false);
+computerState = generateShipsArray(computerShips);
