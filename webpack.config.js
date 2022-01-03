@@ -61,6 +61,10 @@ const config = {
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        use: ["file-loader"],
+      },
     ],
   },
   plugins: [
