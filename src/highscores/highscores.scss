@@ -1,90 +1,147 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: $black-light-color;
-    color: $white-color;
-    max-width: 86vw;
-    height: 100vh;
-    margin: 0 auto;
-    font-family: $lato-font;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $black-light-color;
+  color: $white-color;
+  max-width: 78vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: $lato-font;
+  @media screen and(min-width: $xl-breakpoint) {
+    max-width: 70vw;
+  }
 }
 
 .title {
+  font-size: $m-font-size-mobile;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px 25px;
+  border-bottom: 5px solid $white-color;
+  @media screen and(min-width: $m-breakpoint) {
     font-size: $l-font-size-desktop;
-    font-weight: bold;
-    margin-top: 10px;
-    padding: 5px 25px;
-    border-bottom: 5px solid $white-color;
-    @media screen and(max-width: $m-breakpoint) {  
-        font-size: $l-font-size-mobile;
-        flex-basis: 10vh;
-        }
+  }
+  @media (orientation: landscape) and(min-width: $l-breakpoint) {
+    font-size: $m-font-size-desktop;
+  }
+  @media screen and(min-width: $l-breakpoint) {
+    font-size: $l-font-size-desktop;
+  }
+  @media (orientation: landscape) and(max-height: $m-breakpoint) {
+    font-size: $s-font-size-mobile;
+  }
 }
 
 .table {
-    text-align: center;
-    border-collapse: collapse;
-    margin-top: 50px;
-    .header__cell {
-        font-size: $s-font-size-desktop;
-        font-weight: bold;
-        border-bottom: 3px solid $white-color;
-        @media screen and(max-width: $m-breakpoint) {  
-            font-size: $xs-font-size-mobile;
-            font-weight:normal;
-            }
-        &:nth-child(2), &:nth-child(4) {
-            padding: 10px 60px;
-            @media screen and(max-width: $m-breakpoint) {  
-                padding: 5px 40px;
-                }
-        }
-        &:nth-child(3) {
-            padding: 10px 30px;
-            @media screen and(max-width: $m-breakpoint) {  
-                padding: 5px 20px;
-                }
-        }
-        &:nth-child(1), &:nth-child(2), &:nth-child(3)  {
-            border-right: 3px solid $white-color;
-        }
+  text-align: center;
+  border-collapse: collapse;
+  .header__cell {
+    font-size: $xxs-font-size-mobile;
+    border-bottom: 3px solid $white-color;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $xs-font-size-desktop;
     }
-    .row__cell {
-        font-size: $xs-font-size-desktop;
-        @media screen and(max-width: $m-breakpoint) {  
-            font-size: $xs-font-size-mobile;
-            }
-        &:nth-child(1) {
-            font-weight: bold;
-            padding: 5px 10px;
-            @media screen and(max-width: $m-breakpoint) {  
-                padding: 5px 5px;
-                font-weight:normal;
-                text-align:right;
-                }
-        }
-        &:nth-child(1), &:nth-child(2), &:nth-child(3) {
-            border-right: 3px solid $white-color;
-        }
+    @media screen and(min-width: $l-breakpoint) {
+      font-size: $s-font-size-desktop;
     }
+    @media (orientation: landscape) and(min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media (orientation: landscape) and(max-height: $m-breakpoint) {
+      font-size: $xs-font-size-mobile;
+    }
+    @media screen and(min-width: $xl-breakpoint) {
+      font-size: $s-font-size-desktop;
+      font-weight: $font-bold;
+    }
+
+    &:nth-child(2),
+    &:nth-child(4) {
+      padding: 10px 20px;
+      @media screen and(min-width: $m-breakpoint) {
+        padding: 10px 50px;
+      }
+      @media screen and(min-width: $l-breakpoint) {
+        padding: 10px 60px;
+      }
+      @media (orientation: landscape) and(min-width: $l-breakpoint) {
+        padding: 5px 60px;
+      }
+      @media (orientation: landscape) and(max-height: $m-breakpoint) {
+        padding: 5px 20px;
+      }
+      @media screen and(min-width: $xl-breakpoint) {
+        padding: 10px 80px;
+      }
+    }
+    &:nth-child(3) {
+      padding: 10px 10px;
+      @media screen and(min-width: $m-breakpoint) {
+        padding: 10px 25px;
+      }
+      @media screen and(min-width: $l-breakpoint) {
+        padding: 10px 30px;
+      }
+      @media (orientation: landscape) and(min-width: $l-breakpoint) {
+        padding: 5px 30px;
+      }
+      @media (orientation: landscape) and(max-height: $m-breakpoint) {
+        padding: 5px 10px;
+      }
+      @media screen and(min-width: $xl-breakpoint) {
+        padding: 10px 40px;
+      }
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-right: 3px solid $white-color;
+    }
+  }
+  .row__cell {
+    font-size: $xxs-font-size-mobile;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media screen and(min-width: $l-breakpoint) {
+      font-size: $xs-font-size-desktop;
+    }
+    &:nth-child(1) {
+      padding: 8px 5px;
+      @media screen and(min-width: $m-breakpoint) {
+        font-weight: $font-bold;
+      }
+      @media (orientation: landscape) and(min-width: $l-breakpoint) {
+        padding: 5px 5px;
+      }
+      @media (orientation: landscape) and(max-height: $m-breakpoint) {
+        padding: 3px 5px;
+      }
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-right: 3px solid $white-color;
+    }
+  }
 }
 
 .return_link {
-    position: relative;
-    bottom: 20px;
-    text-decoration: none;
-    color: $white-color;
-    font-size: $xxs-font-size-desktop;
-    align-self: flex-end;
-    margin-right: 100px;
-    font-weight: bold;
-    cursor: pointer;
-    @media screen and(max-width: $m-breakpoint) {  
-        flex-basis: 5vh;
-        margin-right: 180px;
-        bottom: 0;
-        }
+  position: relative;
+  bottom: 20px;
+  text-decoration: none;
+  color: $white-color;
+  font-size: $xxs-font-size-desktop;
+  align-self: flex-end;
+  margin-right: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  @media screen and(min-width: $m-breakpoint) {
+    font-size: $xs-font-size-desktop;
+  }
+  @media screen and(min-width: $l-breakpoint) {
+    font-size: $s-font-size-desktop;
+  }
 }
-    
