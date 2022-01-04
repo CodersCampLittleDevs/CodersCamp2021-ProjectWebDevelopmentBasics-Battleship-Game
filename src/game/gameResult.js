@@ -12,7 +12,7 @@ function getResult() {
     settlement = "Defeat";
     result = "lose";
   }
-    
+  return { settlement, result, userPoints };
 }
 
 exports.getResult = getResult;
