@@ -46,6 +46,6 @@ const displayHighScores = () => {
   }
 };
 
-displayHighScores();
-
 addEasterEgg();
+
+displayHighScores();

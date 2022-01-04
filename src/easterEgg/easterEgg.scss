@@ -9,7 +9,7 @@
     align-items: center;
     text-align: center;
     color: $white-color;
-    z-index: 1;
+    z-index: 999;
     &::before {
       position: absolute;
       content: "";

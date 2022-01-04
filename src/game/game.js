@@ -18,6 +18,5 @@ START_GAME_BTN.addEventListener("click", function () {
 });
 
 createGameBoards();
-checkIfGameStarted(isGameStarted);
-
 addEasterEgg();
+checkIfGameStarted(isGameStarted);
