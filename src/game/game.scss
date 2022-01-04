@@ -331,10 +331,7 @@
     bottom: 3%;
   }
   @media only screen and (min-width: $l-breakpoint) {
-    font-size: $xxs-font-size-desktop;
-  }
-  @media only screen and (min-width: $l-breakpoint) {
-    font-size: $xxs-font-size-desktop;
+    font-size: $s-font-size-desktop;
   }
 }
 
