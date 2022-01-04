@@ -15,7 +15,6 @@ export function addEasterEgg(){
         if(easterEgg.length > 4){
             easterEgg.shift();
         };
-        console.log(counter);
         if(easterEgg[0] == 2 && easterEgg[1] == 0 && easterEgg[2] == 1 && easterEgg[3] == 1){
             openModal();
             changeSlides();
