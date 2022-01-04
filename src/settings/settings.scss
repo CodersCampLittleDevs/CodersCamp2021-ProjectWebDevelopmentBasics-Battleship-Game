@@ -91,11 +91,13 @@
   }
 }
 
-.section__link--return {
+.return__link {
   font-size: $m-font-size-desktop;
   text-decoration: none;
   align-self: flex-end;
   margin-right: 79px;
+  color: $white-color;
+  transition: transform 0.2s;
 
   @media (max-width: $m-breakpoint) {
     font-size: $s-font-size-mobile;
@@ -107,8 +109,4 @@
     border-bottom: 2px $white-color solid;
     transform: scale(1.3);
   }
-}
-
-.section__link--return:visited {
-  color: $white-color;
 }

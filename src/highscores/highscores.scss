@@ -130,15 +130,17 @@
   }
 }
 
-.return_link {
+.return__link {
   position: relative;
   bottom: 20px;
   text-decoration: none;
+  height: 5%;
   color: $white-color;
   font-size: $xxs-font-size-desktop;
   align-self: flex-end;
   margin-right: 100px;
   font-weight: bold;
+  transition: transform 0.2s;
   cursor: pointer;
   @media screen and(min-width: $m-breakpoint) {
     font-size: $xs-font-size-desktop;
