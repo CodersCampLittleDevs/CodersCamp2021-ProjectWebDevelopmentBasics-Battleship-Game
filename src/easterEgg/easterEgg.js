@@ -40,7 +40,7 @@ function openModal(){
             <div class="modal__content easter-egg">
                 <div class="slider">
                     <button id='leftButton' class='leftButton button'>&lt</button>
-                    <div id='slide1' class="hidden">
+                    <div id='slide1' class="slide hidden">
                         <h2>Secret Codes and Battleships!</h2>
                         <div class="slide slide_1">
                         </div>
