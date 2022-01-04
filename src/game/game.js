@@ -23,8 +23,6 @@ export let computerShips;
 export let computerEmptyFields;
 addEasterEgg();
 createGameBoards();
-checkIfGameStarted(isGameStarted);
-checkIfGameStarted(isGameStarted, START_GAME_BTN);
 
 RANDOMIZE_BTN.addEventListener("click", function () {
   [playerEmptyFields, playerShips] = addShipsToBoard(true);
@@ -36,6 +34,5 @@ RANDOMIZE_BTN.addEventListener("click", function () {
 });
 [computerEmptyFields, computerShips] = addShipsToBoard(false);
 computerState = generateShipsArray(computerShips);
-console.log(computerShips);
 
 makeFieldsTargetable();

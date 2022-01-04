@@ -37,7 +37,7 @@ function openModal(){
     let modal = document.createElement('div');
     modal.classList.add('modal');
     modal.innerHTML =`
-            <div class="slider modal__content">
+            <div class="modal__content easter-egg">
                 <div class="slider">
                     <button id='leftButton' class='leftButton button'>&lt</button>
                     <div id='slide1' class="hidden">
@@ -108,19 +108,19 @@ function whatSlide(){
     switch(counter%4){
         case 0:
             slide1.classList.remove('hidden');
-            leftButton.classList.add('hidden2');
+            leftButton.classList.add('invisible');
             break;
         case 1:
             slide2.classList.remove('hidden');
-            leftButton.classList.remove('hidden2');
+            leftButton.classList.remove('invisible');
             break;
         case 2:
             slide3.classList.remove('hidden');
-            rightButton.classList.remove('hidden2');
+            rightButton.classList.remove('invisible');
             break;
         case 3:
             slide4.classList.remove('hidden');
-            rightButton.classList.add('hidden2');
+            rightButton.classList.add('invisible');
             break;
         
     };
