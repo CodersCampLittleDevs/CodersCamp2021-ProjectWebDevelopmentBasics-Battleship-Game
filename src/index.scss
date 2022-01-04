@@ -13,12 +13,14 @@
   @media screen and (min-width: $xl-breakpoint) {
     left: 50px;
     width: 35vw;
+    align-items: flex-start;
   }
 }
 
 .logo {
   width: 205px;
   height: 147px;
+  align-self: center;
   @media screen and (min-width: $m-breakpoint) {
     width: 402px;
     height: 290px;
@@ -27,6 +29,9 @@
 
 .menu {
   flex-basis: 55vh;
+  @media screen and (min-width: $xl-breakpoint) {
+    padding-left: 90px;
+  }
   &__item {
     list-style: none;
     text-align: center;

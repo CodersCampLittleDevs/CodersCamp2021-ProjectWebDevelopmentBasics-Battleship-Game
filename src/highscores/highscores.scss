@@ -1,7 +1,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   background-color: $black-light-color;
   color: $white-color;
@@ -17,11 +17,12 @@
 .title {
   font-size: $m-font-size-mobile;
   font-weight: bold;
-  margin-top: 10px;
-  padding: 5px 25px;
+  margin-top: 50px;
+  padding: 5px 15px;
   border-bottom: 5px solid $white-color;
   @media screen and(min-width: $m-breakpoint) {
     font-size: $l-font-size-desktop;
+    padding: 5px 25px;
   }
   @media (orientation: landscape) and(min-width: $l-breakpoint) {
     font-size: $m-font-size-desktop;
@@ -29,14 +30,15 @@
   @media screen and(min-width: $l-breakpoint) {
     font-size: $l-font-size-desktop;
   }
-  @media (orientation: landscape) and(max-height: $m-breakpoint) {
-    font-size: $s-font-size-mobile;
+  @media screen and(max-height: 415px) {
+    margin-top: 0;
   }
 }
 
 .table {
   text-align: center;
   border-collapse: collapse;
+  flex-basis: 65vh;
   .header__cell {
     font-size: $xxs-font-size-mobile;
     border-bottom: 3px solid $white-color;
@@ -140,6 +142,7 @@
   cursor: pointer;
   @media screen and(min-width: $m-breakpoint) {
     font-size: $xs-font-size-desktop;
+    bottom: 40px;
   }
   @media screen and(min-width: $l-breakpoint) {
     font-size: $s-font-size-desktop;
