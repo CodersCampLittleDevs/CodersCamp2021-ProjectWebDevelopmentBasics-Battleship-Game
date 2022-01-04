@@ -2,7 +2,11 @@
 let gameTime;
 
 function setTimer(time = 10, finishGame) {
-  const timer = document.querySelector(".timer");
+  if (time < 1 || time > 60 || typeof time !== "number") {
+    const err = new Error("Invalid value for game time.");
+    throw err;
+  }
+  const timer = document.querySelector(".timer__counter");
   let totalSeconds = time * 60;
   let minutes = totalSeconds / 60;
   let seconds = totalSeconds - minutes * 60;

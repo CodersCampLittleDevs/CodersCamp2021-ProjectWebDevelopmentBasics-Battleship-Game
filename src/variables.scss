@@ -12,7 +12,7 @@ $l-font-size-desktop: 65px;
 $xl-font-size-desktop: 144px;
 
 //font-size mobile
-$xxs-font-size-mobile: 16px;
+$xxs-font-size-mobile: 13px;
 $xs-font-size-mobile: 20px;
 $s-font-size-mobile: 26px;
 $m-font-size-mobile: 32px;
@@ -31,6 +31,12 @@ $font-bold: 700;
 $white-color: #ffffff;
 $black-light-color: rgba(0, 0, 0, 0.45);
 $black-dark-color: rgba(0, 0, 0, 0.8);
+$blue-light-color: #243c60;
+$blue-dark-color: #051e42;
 
 //images
 $background-image-path: "./static/img/wave-background.png";
+$background-image-album: "./static/img/album.png";
+$background-image-meme1: "./static/img/meme1.png";
+$background-image-meme2: "./static/img/meme2.png";
+$background-image-meme3: "./static/img/meme3.jpg";
