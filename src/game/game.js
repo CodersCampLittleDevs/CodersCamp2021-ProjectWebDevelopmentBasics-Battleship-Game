@@ -8,6 +8,7 @@ import { startGame, isGameStarted, START_GAME_BTN } from "./startGame";
 import { makeFieldsTargetable } from "./playerShooting";
 import { setDataInStorage } from "../utils/localStorage/localStorage";
 import "../styles.scss";
+import { addEasterEgg } from "../easterEgg/easterEgg";
 import "./game.scss";
 import "./gameOverModal.scss";
 
@@ -20,8 +21,9 @@ export let playerEmptyFields;
 export let computerState;
 export let computerShips;
 export let computerEmptyFields;
-
+addEasterEgg();
 createGameBoards();
+checkIfGameStarted(isGameStarted);
 checkIfGameStarted(isGameStarted, START_GAME_BTN);
 
 RANDOMIZE_BTN.addEventListener("click", function () {

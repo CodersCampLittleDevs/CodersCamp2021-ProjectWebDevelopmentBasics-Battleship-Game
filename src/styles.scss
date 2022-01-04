@@ -14,3 +14,23 @@ body {
     background-position: center;
     background-repeat: no-repeat;
 }
+.slide_1{
+    background-image: url(#{$background-image-album});
+    width: 400px;
+    height: 400px;
+  }
+.slide_2{
+background-image: url(#{$background-image-meme1});
+width: 400px;
+height: 400px;
+}
+.slide_3{
+background-image: url(#{$background-image-meme2});
+width: 400px;
+height: 400px;
+}
+.slide_4{
+background-image: url(#{$background-image-meme3});
+width: 400px;
+height: 400px;
+}

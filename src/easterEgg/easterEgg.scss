@@ -1,0 +1,114 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $white-color;
+    z-index: 999;
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 15px;
+      right: 15px;
+      bottom: 0;
+      background-color: $black-dark-color;
+      @media screen and (min-width: $m-breakpoint) {
+        left: 45px;
+        right: 45px;
+      }
+    }
+    &__content {
+      max-width: 80vw;
+      max-height: 80vh;
+      z-index: 999;
+      display: flex;
+    }
+    &__settlement {
+      border-bottom: 5px solid $white-color;
+      line-height: 1;
+      font-size: $xl-font-size-mobile;
+      padding: 0 0 23px 0;
+      margin: 0;
+      @media screen and(min-width: $m-breakpoint) {
+        font-size: $xl-font-size-desktop;
+      }
+    }
+    &__result {
+      font-size: $m-font-size-mobile;
+      margin: 36px 0;
+      @media screen and(min-width: $m-breakpoint) {
+        font-size: $m-font-size-desktop;
+      }
+    }
+    &__actions {
+      margin-top: 100px;
+    }
+    &__action-item {
+      display: block;
+      font-size: $l-font-size-mobile;
+      color: $white-color;
+      text-decoration: none;
+      font-weight: bold;
+      margin-bottom: 50px;
+      @media screen and(min-width: $m-breakpoint) {
+        font-size: $l-font-size-desktop;
+      }
+    }
+}
+.hidden{
+  display: none;
+}
+.hidden2{
+  visibility: hidden;
+}
+.button{
+  all: none;
+  font-family: $xl-font-size-desktop;
+  width: 30px;
+  height: 75px;
+  background-color: black;
+  color: #fff;
+  border: 0;
+  transition: all 0.25s ease;
+  &:hover {
+    background-color: rgba(73, 73, 73, 0.151);
+    color: white;
+  }
+}
+.slide{
+  width: 400px;
+  height: 400px;
+  margin: 40px 40px 10px;
+}
+img{
+  width: 400px;
+  height: 400px;
+}
+.slider{
+  display: flex;
+  align-items: center;
+}
+h2, h3{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.return{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+.return:hover {
+  border-bottom: 2px $white-color solid;
+  transform: scale(1.3);
+}
+
+.return {
+color: $white-color;
+}
