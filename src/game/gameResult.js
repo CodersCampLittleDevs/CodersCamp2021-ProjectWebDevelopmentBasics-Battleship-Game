@@ -1,10 +1,8 @@
 const { getDataFromStorage } = require("../utils/localStorage/localStorage.js");
 
 function getResult() {
-  let settlement;
-  let result;
-  const computerPoints = getDataFromStorage("computerPoints");
-  const userPoints = getDataFromStorage("userPoints");
+  const computerPoints = +getDataFromStorage("computerPoints");
+  const userPoints = +getDataFromStorage("userPoints");
   if (userPoints > computerPoints) {
     settlement = "Victory";
     result = "win";

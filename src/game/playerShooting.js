@@ -3,6 +3,11 @@ import { computerMove } from "./computerShooting";
 import { getResult } from "./gameResult";
 import { displayModal } from "./gameOverModal";
 import { stopTimer } from "./gameTimer";
+import { saveMatchResult } from "../highscores/highscoresState";
+import {
+  setDataInStorage,
+  getDataFromStorage,
+} from "../utils/localStorage/localStorage";
 
 const COMPUTER_BOARD = document.querySelector(".board__fields--computer");
 function hitField() {
@@ -33,10 +38,12 @@ function hitField() {
     fieldOnBoard.classList.add("hit");
     const lostAllShips = computerState.ships.every((ship) => ship.sunk);
     computerState.lostAllShips = lostAllShips;
+    setDataInStorage("userPoints", +getDataFromStorage("userPoints") + 1);
     if (lostAllShips) {
       const { settlement, result, userPoints } = getResult();
       displayModal(settlement, result, +userPoints);
       stopTimer();
+      saveMatchResult(result, +userPoints);
     }
   } else {
     fieldIndex = computerEmptyFields.findIndex(
