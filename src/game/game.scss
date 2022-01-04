@@ -110,17 +110,6 @@
     flex-wrap: wrap;
     &--computer {
       position: relative;
-      &.overlay {
-        &::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          background-color: $black-light-color;
-        }
-      }
     }
   }
 
@@ -129,7 +118,43 @@
     width: 10%;
     border: 1px solid $black-light-color;
     cursor: pointer;
-
+    position: relative;
+    &.hit::after {
+      position: absolute;
+      content: "+";
+      font-size: 50px;
+      color: red;
+      transform: rotate(45deg);
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &.miss::after {
+      position: absolute;
+      content: "●";
+      font-size: 30px;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &.sunk::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: red;
+      transform: rotate(0);
+    }
     &:nth-child(-n + 10) {
       border-top: none;
     }
@@ -335,6 +360,10 @@
   z-index: 1;
   @include button;
   font-size: $xxs-font-size-mobile;
+  &.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
   @media only screen and (min-width: $m-breakpoint) {
     font-size: $xs-font-size-mobile;
     height: 4%;
@@ -349,4 +378,21 @@
 
 .ship {
   background-color: $black-dark-color;
+}
+
+.overlay {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $black-light-color;
+    z-index: 2;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
 }

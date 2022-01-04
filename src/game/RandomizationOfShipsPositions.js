@@ -96,7 +96,7 @@ const positionShipHorizontally = (shipIndex, direction) => {
       gameBoardArray[position[0]][position[1] + i] = {
         isEmpty: false,
         shipName: SHIPS_LIST[shipIndex].shipName,
-        fieldName: fieldsNamesArray[position[0] * 10 + i],
+        fieldName: fieldsNamesArray[position[0] * 10 + position[1] + i],
         hit: false,
       };
     }
@@ -106,12 +106,12 @@ const positionShipHorizontally = (shipIndex, direction) => {
 export const addShipsToBoard = (isPlayer) => {
   createGameBoardArray();
   const gameBoard = placeShipsOnBoard();
-  if (isPlayer) {
-    GAME_BOARD[isPlayer ? 0 : 1].innerHTML = "";
-    let gameBoardForMap = gameBoardArray.flat(Infinity);
-    gameBoardForMap.map((_, i) => {
-      let newField = document.createElement("div");
-      newField.classList.add(`board__field`);
+  GAME_BOARD[isPlayer ? 0 : 1].innerHTML = "";
+  let gameBoardForMap = gameBoardArray.flat(Infinity);
+  gameBoardForMap.map((_, i) => {
+    let newField = document.createElement("div");
+    newField.classList.add(`board__field`);
+    if (isPlayer) {
       if (!gameBoardForMap[i].isEmpty) {
         newField.classList.add(`ship`);
       }
@@ -121,11 +121,12 @@ export const addShipsToBoard = (isPlayer) => {
           gameBoardForMap[i].shipName
         );
       }
-      newField.setAttribute("data-field-name", fieldsNamesArray[i]);
-      newField.dataset.id = i;
-      GAME_BOARD[isPlayer ? 0 : 1].appendChild(newField);
-    });
-  }
+    }
+    newField.setAttribute("data-field-name", fieldsNamesArray[i]);
+    newField.dataset.id = i;
+    GAME_BOARD[isPlayer ? 0 : 1].appendChild(newField);
+  });
+
   return separateShipsFromEmptyFields(gameBoard);
 };
 
