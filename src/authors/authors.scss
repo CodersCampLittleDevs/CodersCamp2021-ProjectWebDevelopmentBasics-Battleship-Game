@@ -1,16 +1,16 @@
 .main {
   height: 100vh;
   color: $white-color;
+  font-weight: $font-bold;
 
   .section {
-    position: relative;
     margin: 0 auto;
     height: 100%;
-    width: 77vw;
+    width: 73vw;
     background-color: $black-light-color;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     text-align: center;
 
@@ -18,18 +18,15 @@
       border-bottom: 5px solid $white-color;
       width: 300px;
       font-size: $l-font-size-desktop;
-      margin-top: 10px;
 
       @media (max-width: $m-breakpoint) {
         font-size: $m-font-size-mobile;
         width: 180px;
         padding-bottom: 15px;
-        margin-top: 53px;
       }
   }
 
     .menu__list {
-      margin-top: 25px;
       text-decoration: none;
       list-style-type: none;
       width: 100%;
@@ -38,7 +35,7 @@
       flex-direction: column;
 
       .menu__list--item {
-        margin-top: 15px;
+        margin: 20px 0;
         padding: 5px;
         font-size: $s-font-size-desktop;
         display: flex;
@@ -60,7 +57,7 @@
           padding: 0;
           margin: 10px;
 
-          &:nth-child(-n + 2) {
+          &:nth-child(1) {
             height: 40px;
             width: 150px;
           }
