@@ -1,19 +1,24 @@
 import { playerState, playerShips, playerEmptyFields } from "./game";
-import getResult from "./gameResult";
-import displayModal from "./gameOverModal";
-import stopTimer from "./gameTimer";
+import { getResult } from "./gameResult";
+import { displayModal } from "./gameOverModal";
+import { stopTimer } from "./gameTimer";
+import { saveMatchResult } from "../highscores/highscoresState";
+import {
+  setDataInStorage,
+  getDataFromStorage,
+} from "../utils/localStorage/localStorage";
 
 let probabilityArray = [
-  false,
-  false,
-  true,
-  false,
   true,
   true,
-  false,
-  false,
-  false,
-  false,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
+  true,
 ];
 
 const PLAYER_BOARD = document.querySelector(".board__fields--player");
@@ -44,10 +49,15 @@ export function computerMove() {
       fieldOnBoard.classList.add("hit");
       const lostAllShips = playerState.ships.every((ship) => ship.sunk);
       playerState.lostAllShips = lostAllShips;
+      setDataInStorage(
+        "computerPoints",
+        +getDataFromStorage("computerPoints") + 1
+      );
       if (lostAllShips) {
         const { settlement, result, userPoints } = getResult();
         displayModal(settlement, result, +userPoints);
         stopTimer();
+        saveMatchResult(result, +userPoints);
       }
       computerMove();
     } else {
@@ -58,7 +68,7 @@ export function computerMove() {
       );
       fieldOnBoard.classList.add("miss");
       playerEmptyFields.splice(fieldIndex, 1);
+      COMPUTER_BOARD.classList.remove(...classes);
     }
-    COMPUTER_BOARD.classList.remove(...classes);
   }, timeForComputer);
 }
