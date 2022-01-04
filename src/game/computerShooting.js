@@ -9,16 +9,16 @@ import {
 } from "../utils/localStorage/localStorage";
 
 let probabilityArray = [
+  false,
   true,
+  false,
+  false,
+  false,
+  false,
   true,
+  false,
   true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
-  true,
+  false,
 ];
 
 const PLAYER_BOARD = document.querySelector(".board__fields--player");
