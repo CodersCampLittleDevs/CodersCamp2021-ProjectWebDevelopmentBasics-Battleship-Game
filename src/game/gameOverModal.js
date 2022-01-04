@@ -12,6 +12,7 @@ function displayModal(GAME_RESULT, GAME_WIN_OR_LOSE, POINTS) {
     const err = new Error("Input data is wrong");
     throw err;
   }
+  console.log(POINTS);
 
   MODAL.innerHTML = `<div class="modal__content">
                         <h2 class="modal__settlement">${GAME_RESULT}!</h2>
