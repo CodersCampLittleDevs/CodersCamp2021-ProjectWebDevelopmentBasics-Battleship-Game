@@ -12,11 +12,11 @@ const config = {
     howtoplay: path.resolve(__dirname, "./src/howtoplay/howtoplay.js"),
   },
   output: {
-    path: path.resolve(__dirname, "docs"),
+    path: path.resolve(__dirname, "root"),
     clean: true,
   },
 
-  mode: "development",
+  mode: "production",
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
