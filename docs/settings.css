@@ -1,0 +1,122 @@
+/*!*************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/settings/settings.scss ***!
+  \*************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap);
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/styles.scss ***!
+  \**************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap);
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/styles.scss (1) ***!
+  \******************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap);
+/*!*****************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/settings/settings.scss (1) ***!
+  \*****************************************************************************************************************************************************/
+body {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700; }
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+
+.section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 77vw;
+  background-color: rgba(0, 0, 0, 0.45); }
+
+.section__header {
+  font-size: 65px;
+  border-bottom: 5px solid #ffffff;
+  width: 300px;
+  text-align: center;
+  padding-bottom: 15px; }
+  @media (max-width: 767px) {
+    .section__header {
+      font-size: 32px;
+      width: 190px;
+      padding: 10px; } }
+
+.section__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.input__label {
+  font-size: 48px;
+  margin-bottom: 40px; }
+  @media (max-width: 767px) {
+    .input__label {
+      font-size: 32px; } }
+
+.section__input--playerName {
+  width: 450px;
+  height: 100px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700; }
+  .section__input--playerName::placeholder {
+    color: #333; }
+  @media (max-width: 1023px) {
+    .section__input--playerName {
+      width: 350px;
+      height: 95px; } }
+  @media (max-width: 767px) {
+    .section__input--playerName {
+      width: 220px;
+      height: 71px;
+      font-size: 26px; } }
+
+.section__button--save {
+  background: transparent;
+  border: 0;
+  width: 150px;
+  cursor: pointer;
+  font-size: 48px;
+  border-bottom: 3px solid #ffffff;
+  color: #ffffff;
+  margin-top: 94px; }
+  @media (max-width: 767px) {
+    .section__button--save {
+      width: 101px;
+      font-size: 32px;
+      margin-bottom: 25px;
+      margin-top: 22px; } }
+
+.section__link--return {
+  font-size: 48px;
+  text-decoration: none;
+  align-self: flex-end;
+  margin-right: 79px; }
+  @media (max-width: 767px) {
+    .section__link--return {
+      font-size: 26px;
+      margin-right: 0;
+      align-self: center; } }
+
+.section__link--return:visited {
+  color: #ffffff; }
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/styles.scss (2) ***!
+  \******************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", "sans-serif"; }
+
+body {
+  background-image: url(92ea71ad4a2c6d7404ab.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+

@@ -1,0 +1,85 @@
+/*!**************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/game/gameOverModal.scss ***!
+  \**************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap);
+/*!**************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/styles.scss ***!
+  \**************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap);
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/styles.scss (1) ***!
+  \******************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap);
+/*!******************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/game/gameOverModal.scss (1) ***!
+  \******************************************************************************************************************************************************/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff; }
+  .modal::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 15px;
+    right: 15px;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); }
+    @media screen and (min-width: 767px) {
+      .modal::before {
+        left: 45px;
+        right: 45px; } }
+  .modal__content {
+    max-width: 80vw;
+    max-height: 80vh;
+    z-index: 999; }
+  .modal__settlement {
+    border-bottom: 5px solid #ffffff;
+    line-height: 1;
+    font-size: 92px;
+    padding: 0 0 23px 0;
+    margin: 0; }
+    @media screen and (min-width: 767px) {
+      .modal__settlement {
+        font-size: 144px; } }
+  .modal__result {
+    font-size: 32px;
+    margin: 36px 0; }
+    @media screen and (min-width: 767px) {
+      .modal__result {
+        font-size: 48px; } }
+  .modal__actions {
+    margin-top: 100px; }
+  .modal__action-item {
+    display: block;
+    font-size: 42px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 50px; }
+    @media screen and (min-width: 767px) {
+      .modal__action-item {
+        font-size: 65px; } }
+
+/*!******************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[2].use[2]!./src/styles.scss (2) ***!
+  \******************************************************************************************************************************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lato", "sans-serif"; }
+
+body {
+  background-image: url(92ea71ad4a2c6d7404ab.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; }
+

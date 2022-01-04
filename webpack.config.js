@@ -12,7 +12,7 @@ const config = {
     howtoplay: path.resolve(__dirname, "./src/howtoplay/howtoplay.js"),
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     clean: true,
   },
 
