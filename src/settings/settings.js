@@ -1,9 +1,9 @@
-import "./settings.scss";
-import bodyStyles from "../styles.scss";
-import {
+const { styles } = require("./settings.scss");
+const { bodyStyle } = require("../styles.scss");
+const {
   setDataInStorage,
   getDataFromStorage,
-} from "../utils/localStorage/localStorage.js";
+} = require("../utils/localStorage/localStorage.js");
 
 const SAVE_BUTTON = document.querySelector(".section__button--save");
 const INPUT = document.querySelector(".section__input--playerName");
@@ -13,13 +13,15 @@ const onButtonClick = () => {
 };
 
 const setPlayerName = () => {
-  
   const playerName = getDataFromStorage("playerName");
 
-  if(playerName) {
+  if (playerName) {
     INPUT.value = playerName;
   }
-}
+};
 
 setPlayerName();
 SAVE_BUTTON.addEventListener("click", onButtonClick);
+
+exports.onButtonClick = onButtonClick;
+exports.setPlayerName = setPlayerName;
