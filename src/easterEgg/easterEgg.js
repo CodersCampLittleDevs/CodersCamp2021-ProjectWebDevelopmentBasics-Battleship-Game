@@ -1,8 +1,4 @@
 import "./easterEgg.scss";
-import album from "../static/img/album.jpg";
-import meme1 from "../static/img/meme1.png";
-import meme2 from "../static/img/meme2.png";
-import meme3 from "../static/img/meme3.jpg";
 let slide1;
 let slide2;
 let slide3;
@@ -47,19 +43,15 @@ function openModal(){
                     <button id='leftButton' class='leftButton button'>&lt</button>
                     <div id='slide1' class="hidden">
                         <h2>Secret Codes and Battleships!</h2>
-                        <div class="slide">
-                            <img src="${album}"/>   
+                        <div class="slide slide_1">
                         </div>
                         <h3>Author: Darren Hayes<br>Released: 21 October 2011</h3>
                     </div>
-                    <div id='slide2' class="hidden slide">
-                        <img class="zdj" src="${meme1}"></img>
+                    <div id='slide2' class="hidden slide slide_2">
                     </div>
-                    <div id='slide3' class="hidden slide">
-                        <img class="zdj" src="${meme2}"></img>
+                    <div id='slide3' class="hidden slide slide_3">
                     </div>
-                    <div id='slide4' class="hidden slide">
-                        <img class="zdj" src="${meme3}"></img>
+                    <div id='slide4' class="hidden slide slide_4">
                     </div>
                     <button id ='rightButton' class='rightButton button'>></button>
                 </div>
