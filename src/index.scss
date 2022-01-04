@@ -1,48 +1,70 @@
-.logo {
-    padding: 40px 0;
-    }
-
 .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  left: 11vw;
+  background-color: $black-light-color;
+  width: 78vw;
+  height: 100vh;
+  color: $white-color;
+  font-family: $lato-font;
+  @media screen and (min-width: $xl-breakpoint) {
     left: 50px;
-    background-color: $black-light-color;
     width: 35vw;
-    height: 100vh;
-    color: $white-color;
-    font-family: $lato-font;
-    @media screen and(max-width: $l-breakpoint) {
-    width: 45vw;
-    }
-    @media screen and(max-width: $m-breakpoint) {  
-    left: 10vw;
-    width: 80vw;
-    }
+  }
 }
+
+.logo {
+  width: 205px;
+  height: 147px;
+  @media screen and (min-width: $m-breakpoint) {
+    width: 402px;
+    height: 290px;
+  }
+}
+
 .menu {
-    flex-basis: 70vh;
-    &__item {
-        list-style: none;
-        text-align: center;
+  flex-basis: 55vh;
+  &__item {
+    list-style: none;
+    text-align: center;
+  }
+  &__link {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    color: $white-color;
+    font-size: 36px;
+    font-weight: $font-bold;
+    margin: 10px 0;
+    transition: 0.2s;
+    @media screen and (min-width: $m-breakpoint) {
+      font-size: $l-font-size-desktop;
     }
-    &__link {
-        display: block;
-        text-decoration: none;
-        color: $white-color;
-        font-size: $l-font-size-mobile;
-        font-weight: bold;
-        margin: 10px 0;
-        transition: 0.2s;
-        @media screen and(min-width: $l-breakpoint) {
-            font-size: $m-font-size-desktop;
-                        }
-        &--line:hover {
-            border-bottom: 4px $white-color solid;
-            transform: scale(1.3);
-            padding-bottom: 10px;
-        }
+    @media screen and (min-width: $l-breakpoint) {
+      font-size: $xl-font-size-mobile;
     }
+    @media (orientation: landscape) and (min-width: $l-breakpoint) {
+      font-size: $m-font-size-desktop;
+    }
+    @media screen and (min-width: $xl-breakpoint) {
+      font-size: $m-font-size-desktop;
+      margin: 20px 0;
+    }
+    &--line:hover {
+      border-bottom: 8px $white-color solid;
+      transform: scale(1.1);
+      padding-bottom: 20px;
+      margin-bottom: 40px;
+      @media screen and (min-width: $m-breakpoint) {
+        transform: scale(1.3);
+      }
+      @media screen and (min-width: $xl-breakpoint) {
+        border-bottom-width: 11px;
+        transform: scale(1.35);
+      }
+    }
+  }
 }

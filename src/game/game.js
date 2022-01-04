@@ -6,6 +6,7 @@ import { addShipsToBoard } from "./randomizationOfShipsPositions";
 import { generateShipsArray } from "./shipsArray";
 import { startGame, isGameStarted, START_GAME_BTN } from "./startGame";
 import { makeFieldsTargetable } from "./playerShooting";
+import { setDataInStorage } from "../utils/localStorage/localStorage";
 import "../styles.scss";
 import { addEasterEgg } from "../easterEgg/easterEgg";
 import "./game.scss";
@@ -24,12 +25,14 @@ addEasterEgg();
 createGameBoards();
 checkIfGameStarted(isGameStarted);
 checkIfGameStarted(isGameStarted, START_GAME_BTN);
-START_GAME_BTN.addEventListener("click", startGame);
 
 RANDOMIZE_BTN.addEventListener("click", function () {
   [playerEmptyFields, playerShips] = addShipsToBoard(true);
   playerState = generateShipsArray(playerShips);
+  START_GAME_BTN.addEventListener("click", startGame);
   START_GAME_BTN.classList.remove("disabled");
+  setDataInStorage("userPoints", 0);
+  setDataInStorage("computerPoints", 0);
 });
 [computerEmptyFields, computerShips] = addShipsToBoard(false);
 computerState = generateShipsArray(computerShips);
