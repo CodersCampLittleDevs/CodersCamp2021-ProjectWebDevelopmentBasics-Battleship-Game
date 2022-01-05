@@ -1,4 +1,3 @@
-// container class where will be displayed timer. Change classname if it is necessary
 let gameTime;
 
 function setTimer(time = 10, finishGame) {
