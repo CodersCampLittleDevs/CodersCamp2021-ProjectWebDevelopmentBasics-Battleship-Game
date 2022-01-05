@@ -27,15 +27,15 @@ Our project is a game of ships. I think it's a good known game for everyone.
 
 ## <a name="features">Features</a>
 - The main pages contains menu where we can start game, learn how to play, check highscores, see authors or go into settings where we can change our name.
-- Before each game user should check his name and change it if it is nessecary
-- After entering start game you have to place your ships on board by clicking **Randomize** button. If you are glad of place for your ships you can start game by clicking **Lets' play!**
-- Your task is to destroy float of your opponent or destroy as much possible fields until time's up.
-- After game will be displayed modal with result of the game and points you have scored. If your points were enough you have chance to become part of highscores tables.
+- Before each game user should check his name and change it if it is necessary.
+- After entering game page, you have to place your ships on board by clicking **Randomize** button. If you are satisfied with randomized places for your ships you can start game by clicking **Lets' play!**
+- Your task is to destroy fleet of your opponent or destroy as much possible fields until time's up.
+- After the game ends, modal will be displayed with result of the game and points you have scored. If your points were enough you have chance to become part of highscores tables.
 
 ## <a name="technologies">Technologies</a>
 - HTML
 - SCSS
-- Vanilla Javascript
+- Javascript
 - Webpack
 - BEM Methodology
 - Jest
@@ -44,6 +44,7 @@ Our project is a game of ships. I think it's a good known game for everyone.
 
 ## <a name="setup">Setup</a>
 **DEMO**
+
 To view demo click [here](https://coderscamplittledevs.github.io/CodersCamp2021-ProjectWebDevelopmentBasics-Battleship-Game/)
 
 **Getting Started**
@@ -55,7 +56,8 @@ If you want to run the application on the local machine, follow these steps:
 3. Start development server npm run serve
 4. The application will be available at http://localhost:9000/ - it should run automatically
 
-Running tests
+**Running tests**
+
 To run the application tests, follow these steps:
 
 1. Install dependencies with the command: npm install (if you haven't already done so before)
