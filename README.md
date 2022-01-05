@@ -66,4 +66,5 @@ To run the application tests, follow these steps:
 ## <a name="organization">Organization</a>
 
 **Figma**
+
 Using Figma, we created our own prototype of a user interface adapted to Desktop, and also made a version adapted to display on Phones. All designs can be viewed [here](https://www.figma.com/file/L3ST1JTUOGIZWQIoF0G0nR/Battleship?node-id=0%3A1).
