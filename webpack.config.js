@@ -12,7 +12,7 @@ const config = {
     howtoplay: path.resolve(__dirname, "./src/howtoplay/howtoplay.js"),
   },
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "docs"),
     clean: true,
   },
   performance: {
@@ -20,7 +20,7 @@ const config = {
     maxEntrypointSize: 512000,
     maxAssetSize: 512000,
   },
-  mode: "development",
+  mode: "production",
   devServer: {
     static: {
       directory: path.join(__dirname, "public"),
