@@ -10,7 +10,9 @@
 
 ## <a name="team">The project team</a>
 Authors of this project are participants who worked under supervision of an experienced mentor.
+
 **Authors:**
+
 - **[Dawid Starzyk (Tech Lead)](https://github.com/JustD1d1t)**
 - **[Alicja Guzik (Development Manager)](https://github.com/alicjaguzik)**
 - **[Maciej Ponicki](https://github.com/MaciekPon)**
