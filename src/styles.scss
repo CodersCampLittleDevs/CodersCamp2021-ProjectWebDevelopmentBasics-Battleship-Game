@@ -1,36 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
 
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: $lato-font;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $lato-font;
 }
 
 body {
-    background-image: url(#{$background-image-path});
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  background-image: url(#{$background-image-path});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.slide_1{
-    background-image: url(#{$background-image-album});
-    width: 400px;
-    height: 400px;
-  }
-.slide_2{
-background-image: url(#{$background-image-meme1});
-width: 400px;
-height: 400px;
+.slide_1 {
+  background-image: url(#{$background-image-album});
+  width: 400px;
+  height: 400px;
 }
-.slide_3{
-background-image: url(#{$background-image-meme2});
-width: 400px;
-height: 400px;
+.slide_2 {
+  background-image: url(#{$background-image-meme1});
+  width: 400px;
+  height: 400px;
 }
-.slide_4{
-background-image: url(#{$background-image-meme3});
-width: 400px;
-height: 400px;
+.slide_3 {
+  background-image: url(#{$background-image-meme2});
+  width: 400px;
+  height: 400px;
+}
+.slide_4 {
+  background-image: url(#{$background-image-meme3});
+  width: 400px;
+  height: 400px;
+}
+
+.return__link:hover {
+  border-bottom: 2px $white-color solid;
+  transform: scale(1.2);
+  padding: 0;
 }

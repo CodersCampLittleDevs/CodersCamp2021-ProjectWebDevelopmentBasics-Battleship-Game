@@ -316,14 +316,14 @@
   }
 }
 
-.link {
+.return__link {
   color: $white-color;
   font-weight: $font-bold;
   position: absolute;
   right: 5%;
   bottom: 5%;
   text-decoration: none;
-  transition: 0.2s;
+  transition: transform 0.2s;
   font-size: $xs-font-size-mobile;
   @media only screen and (min-width: $m-breakpoint) {
     font-size: $xxs-font-size-desktop;
@@ -331,17 +331,7 @@
     bottom: 3%;
   }
   @media only screen and (min-width: $l-breakpoint) {
-    font-size: $xxs-font-size-desktop;
-  }
-  @media only screen and (min-width: $l-breakpoint) {
-    font-size: $xxs-font-size-desktop;
-  }
-
-  &:hover {
-    cursor: pointer;
-    border-bottom: 4px $white-color solid;
-    transform: scale(1.1);
-    padding-bottom: 5px;
+    font-size: $s-font-size-desktop;
   }
 }
 
