@@ -3,6 +3,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = {
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   entry: {
     index: path.resolve(__dirname, "./src/index.js"),
     settings: path.resolve(__dirname, "./src/settings/settings.js"),
