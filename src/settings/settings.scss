@@ -92,6 +92,7 @@
 }
 
 .return__link {
+  height: 5%;
   font-size: $s-font-size-desktop;
   text-decoration: none;
   align-self: flex-end;
@@ -103,10 +104,5 @@
     font-size: $s-font-size-mobile;
     margin-right: 0;
     align-self: center;
-  }
-
-  &:hover {
-    border-bottom: 2px $white-color solid;
-    transform: scale(1.3);
   }
 }
