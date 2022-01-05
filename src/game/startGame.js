@@ -15,7 +15,7 @@ export const startGame = () => {
     isGameStarted = !isGameStarted;
     checkIfGameStarted(isGameStarted, START_GAME_BTN);
     PLAYER_BOARD.classList.remove("overlay");
-    setTimer(10, finishGame);
+    setTimer(1, finishGame);
   }
 };
 
