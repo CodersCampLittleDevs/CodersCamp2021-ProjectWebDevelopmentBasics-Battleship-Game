@@ -1,7 +1,10 @@
-export function setDataInStorage(key, value) {
+function setDataInStorage(key, value) {
   localStorage.setItem(key, value);
 }
 
-export function getDataFromStorage(key) {
+function getDataFromStorage(key) {
   return localStorage.getItem(key);
 }
+
+exports.setDataInStorage = setDataInStorage;
+exports.getDataFromStorage = getDataFromStorage;

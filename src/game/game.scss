@@ -1,0 +1,398 @@
+@import "../variables.scss";
+
+@mixin button {
+  background-color: $blue-light-color;
+  border: none;
+  border-radius: 15px;
+  font-size: $xs-font-size-desktop;
+  font-weight: $font-bold;
+  color: $white-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $blue-dark-color;
+  }
+}
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  background-color: $black-light-color;
+  height: 100%;
+  width: 90%;
+  @media only screen and (min-width: $l-breakpoint) {
+    flex-direction: row;
+  }
+}
+
+.timer {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+  @media only screen and (min-width: $l-breakpoint) {
+    top: 5%;
+  }
+  &__counter {
+    font-weight: $font-bold;
+    color: $white-color;
+    font-size: $xxs-font-size-mobile;
+    @media only screen and (min-width: $m-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $s-font-size-desktop;
+    }
+  }
+}
+.board {
+  width: 30vh;
+  height: 30vh;
+  background-color: $white-color;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  @media only screen and (min-width: $l-breakpoint) {
+    width: 50vh;
+    height: 50vh;
+  }
+  &__wrapper {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    @media only screen and (min-width: $l-breakpoint) {
+      justify-content: space-around;
+    }
+  }
+
+  &__player {
+    padding: 30px 0;
+
+    &-name {
+      color: $white-color;
+      font-size: $xxs-font-size-mobile;
+      @media only screen and (min-width: $m-breakpoint) {
+        font-size: $xs-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $s-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $s-font-size-desktop;
+      }
+    }
+  }
+
+  &__fields {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &--computer {
+      position: relative;
+    }
+  }
+
+  &__field {
+    height: 10%;
+    width: 10%;
+    border: 1px solid $black-light-color;
+    cursor: pointer;
+    position: relative;
+    &.hit::after {
+      position: absolute;
+      content: "+";
+      font-size: 50px;
+      color: red;
+      transform: rotate(45deg);
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &.miss::after {
+      position: absolute;
+      content: "●";
+      font-size: 30px;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &.sunk::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: red;
+      transform: rotate(0);
+    }
+    &:nth-child(-n + 10) {
+      border-top: none;
+    }
+
+    &:nth-child(10n) {
+      border-right: none;
+    }
+
+    &:nth-child(10n + 1) {
+      border-left: none;
+    }
+
+    &:nth-child(n + 91) {
+      border-bottom: none;
+    }
+  }
+
+  &__characters {
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    left: -30px;
+    display: flex;
+    flex-direction: column;
+    @media only screen and (min-width: $m-breakpoint) {
+      left: -40px;
+    }
+
+    &-char {
+      height: 10%;
+      width: 10%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white-color;
+      font-size: $xxs-font-size-mobile;
+      @media only screen and (min-width: $m-breakpoint) {
+        font-size: $xs-font-size-mobile;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
+      }
+    }
+  }
+
+  &__numbers {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: -30px;
+    display: flex;
+    @media only screen and (min-width: $m-breakpoint) {
+      top: -40px;
+    }
+
+    &-numb {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $white-color;
+      font-size: $xxs-font-size-mobile;
+      @media only screen and (min-width: $m-breakpoint) {
+        font-size: $xs-font-size-mobile;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
+      }
+      @media only screen and (min-width: $l-breakpoint) {
+        font-size: $xxs-font-size-desktop;
+      }
+    }
+  }
+}
+
+.ships {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30vh;
+
+    @media only screen and (min-width: $m-breakpoint) {
+      width: 30vh;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      width: 50vh;
+      height: 25vh;
+    }
+  }
+
+  &__row {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: end;
+  }
+
+  &-ship {
+    background-color: $white-color;
+    margin: 5px 10px 5px 0;
+    cursor: pointer;
+    height: 10px;
+    @media only screen and (min-width: $m-breakpoint) {
+      height: 15px;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      height: 25px;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      height: 25px;
+    }
+  }
+  &__heading {
+    font-weight: $font-bold;
+    color: $white-color;
+    font-size: $xxs-font-size-mobile;
+    @media only screen and (min-width: $m-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+  }
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
+  @media only screen and (min-width: $l-breakpoint) {
+    width: 90%;
+  }
+  &__button {
+    height: 3vh;
+    width: 45%;
+    font-size: $xxs-font-size-mobile;
+    @include button;
+    @media only screen and (min-width: $m-breakpoint) {
+      font-size: $xs-font-size-mobile;
+      height: 3vh;
+      width: 45%;
+    }
+    @media only screen and (min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+      height: 70%;
+      width: 60%;
+    }
+  }
+}
+
+.link {
+  color: $white-color;
+  font-weight: $font-bold;
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+  text-decoration: none;
+  transition: 0.2s;
+  font-size: $xs-font-size-mobile;
+  @media only screen and (min-width: $m-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+    right: 5%;
+    bottom: 3%;
+  }
+  @media only screen and (min-width: $l-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+  }
+  @media only screen and (min-width: $l-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border-bottom: 4px $white-color solid;
+    transform: scale(1.1);
+    padding-bottom: 5px;
+  }
+}
+
+.computer {
+  background-color: $black-light-color;
+  color: $black-light-color;
+}
+
+.button--start {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 3%;
+  width: 25%;
+  z-index: 1;
+  @include button;
+  font-size: $xxs-font-size-mobile;
+  &.disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  @media only screen and (min-width: $m-breakpoint) {
+    font-size: $xs-font-size-mobile;
+    height: 4%;
+    width: 15%;
+  }
+  @media only screen and (min-width: $l-breakpoint) {
+    font-size: $xxs-font-size-desktop;
+    height: 7%;
+    width: 15%;
+  }
+}
+
+.ship {
+  background-color: $black-dark-color;
+}
+
+.overlay {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $black-light-color;
+    z-index: 2;
+  }
+}
+
+.disabled {
+  cursor: not-allowed;
+}

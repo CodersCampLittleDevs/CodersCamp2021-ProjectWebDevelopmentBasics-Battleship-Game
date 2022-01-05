@@ -1,84 +1,109 @@
-.main{
-  color:$white-color;
-    min-height:100vh;
-  width: 90vw;
-  position: relative;
-  overflow: hidden;
+.main {
+  height: 100vh;
+  color: $white-color;
+  font-weight: $font-bold;
 
- .pop{
- 
+  .section {
+    margin: 0 auto;
+    height: 100%;
+    width: 73vw;
     background-color: $black-light-color;
-position: absolute;
- top: 50%;
- left: 50%;
- transform: translate(-50%, -50%);
- width: 60%;
- height: 80%;
- display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  text-align: center;
-@media screen and(min-width:$l-breakpoint ){
-  width:65vw;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
 
-.title{
-  
-  font-size: $m-font-size-mobile;
-  margin-top: 20px;
-border-bottom: 1px solid $white-color;
-width: 300px;
-@media screen and (min-width: $m-breakpoint) {
+    .title {
+      border-bottom: 5px solid $white-color;
+      width: 300px;
       font-size: $l-font-size-desktop;
-    }
-}
 
- .menu{
-  text-decoration: none;
-list-style-type: none;
+      @media (max-width: $m-breakpoint) {
+        font-size: $m-font-size-mobile;
+        width: 180px;
+        padding-bottom: 15px;
+      }
+  }
 
-.link--github{
-  margin-top:20px;
-  
-      padding: 10px;
+    .menu__list {
       text-decoration: none;
-      font-size:$xs-font-size-mobile;
-      color: $white-color; 
+      list-style-type: none;
+      width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
-    
-      cursor: pointer;
-    @media screen and(min-width: $m-breakpoint) {
-      font-size: $xs-font-size-desktop;
+      flex-direction: column;
 
+      .menu__list--item {
+        margin: 20px 0;
+        padding: 5px;
+        font-size: $s-font-size-desktop;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media(max-width: $xl-breakpoint) {
+          font-size: $xs-font-size-desktop;
+          margin-top: 10px;
+        }
+
+        @media(max-width: $l-breakpoint) {
+          font-size: $xs-font-size-desktop;
+          margin-top: 10px;
+        }
+
+        @media(max-width: $m-breakpoint) {
+          font-size: $xs-font-size-mobile;
+          padding: 0;
+          margin: 10px;
+
+          &:nth-child(1) {
+            height: 40px;
+            width: 150px;
+          }
+
+          &:nth-child(3) {
+            width: 210px;
+          }
+        }
+      }
+
+      .link--github {
+        text-decoration: none;
+        color: $white-color;
+        cursor: pointer;
+
+        &:hover {
+          color: $black-dark-color;
+        }
+      }
     }
-}
-}
-}
   }
+}
 
-.return{ 
+.return__link {
+  height: 5%;
   color: $white-color;
   text-decoration: none;
-  font-size:$s-font-size-mobile ;
-  position: absolute;
-  bottom: 50px;
-  right: 95px;
-transition: all 0.2s ease-in-out;
- @media screen and(min-width: $m-breakpoint) {
-    font-size: $s-font-size-desktop;
-    bottom:30px;
-    right:40px;
-     &:hover {
-      transform: scale(1.3);
-    }
+  font-size: $xs-font-size-desktop;
+  transition: transform 250ms;
+  align-self: flex-end;
+  margin-right: 79px;
+
+  &:hover {
+    transform: scale(1.2);
+    border-bottom: 3px solid $white-color;
+  }
+
+  @media(max-width: $l-breakpoint) {
+    align-self: center;
+    margin: 0;
+  }
+
+  @media (max-width: $m-breakpoint) {
+    font-size: $s-font-size-mobile;
+    margin-right: 0;
+    margin-top: 30px;
+    align-self: center;
   }
 }
-
-
-
-
-
-

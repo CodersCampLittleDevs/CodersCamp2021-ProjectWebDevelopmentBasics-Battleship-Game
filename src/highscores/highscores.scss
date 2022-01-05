@@ -1,0 +1,150 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $black-light-color;
+  color: $white-color;
+  max-width: 78vw;
+  height: 100vh;
+  margin: 0 auto;
+  font-family: $lato-font;
+  @media screen and(min-width: $xl-breakpoint) {
+    max-width: 70vw;
+  }
+}
+
+.title {
+  font-size: $m-font-size-mobile;
+  font-weight: bold;
+  margin-top: 50px;
+  padding: 5px 15px;
+  border-bottom: 5px solid $white-color;
+  @media screen and(min-width: $m-breakpoint) {
+    font-size: $l-font-size-desktop;
+    padding: 5px 25px;
+  }
+  @media (orientation: landscape) and(min-width: $l-breakpoint) {
+    font-size: $m-font-size-desktop;
+  }
+  @media screen and(min-width: $l-breakpoint) {
+    font-size: $l-font-size-desktop;
+  }
+  @media screen and(max-height: 415px) {
+    margin-top: 0;
+  }
+}
+
+.table {
+  text-align: center;
+  border-collapse: collapse;
+  flex-basis: 65vh;
+  .header__cell {
+    font-size: $xxs-font-size-mobile;
+    border-bottom: 3px solid $white-color;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $xs-font-size-desktop;
+    }
+    @media screen and(min-width: $l-breakpoint) {
+      font-size: $s-font-size-desktop;
+    }
+    @media (orientation: landscape) and(min-width: $l-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media (orientation: landscape) and(max-height: $m-breakpoint) {
+      font-size: $xs-font-size-mobile;
+    }
+    @media screen and(min-width: $xl-breakpoint) {
+      font-size: $s-font-size-desktop;
+      font-weight: $font-bold;
+    }
+
+    &:nth-child(2),
+    &:nth-child(4) {
+      padding: 10px 20px;
+      @media screen and(min-width: $m-breakpoint) {
+        padding: 10px 50px;
+      }
+      @media screen and(min-width: $l-breakpoint) {
+        padding: 10px 60px;
+      }
+      @media (orientation: landscape) and(min-width: $l-breakpoint) {
+        padding: 5px 60px;
+      }
+      @media (orientation: landscape) and(max-height: $m-breakpoint) {
+        padding: 5px 20px;
+      }
+      @media screen and(min-width: $xl-breakpoint) {
+        padding: 10px 80px;
+      }
+    }
+    &:nth-child(3) {
+      padding: 10px 10px;
+      @media screen and(min-width: $m-breakpoint) {
+        padding: 10px 25px;
+      }
+      @media screen and(min-width: $l-breakpoint) {
+        padding: 10px 30px;
+      }
+      @media (orientation: landscape) and(min-width: $l-breakpoint) {
+        padding: 5px 30px;
+      }
+      @media (orientation: landscape) and(max-height: $m-breakpoint) {
+        padding: 5px 10px;
+      }
+      @media screen and(min-width: $xl-breakpoint) {
+        padding: 10px 40px;
+      }
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-right: 3px solid $white-color;
+    }
+  }
+  .row__cell {
+    font-size: $xxs-font-size-mobile;
+    @media screen and(min-width: $m-breakpoint) {
+      font-size: $xxs-font-size-desktop;
+    }
+    @media screen and(min-width: $l-breakpoint) {
+      font-size: $xs-font-size-desktop;
+    }
+    &:nth-child(1) {
+      padding: 8px 5px;
+      @media screen and(min-width: $m-breakpoint) {
+        font-weight: $font-bold;
+      }
+      @media (orientation: landscape) and(min-width: $l-breakpoint) {
+        padding: 5px 5px;
+      }
+      @media (orientation: landscape) and(max-height: $m-breakpoint) {
+        padding: 3px 5px;
+      }
+    }
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      border-right: 3px solid $white-color;
+    }
+  }
+}
+
+.return_link {
+  position: relative;
+  bottom: 20px;
+  text-decoration: none;
+  color: $white-color;
+  font-size: $xxs-font-size-desktop;
+  align-self: flex-end;
+  margin-right: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  @media screen and(min-width: $m-breakpoint) {
+    font-size: $xs-font-size-desktop;
+    bottom: 40px;
+  }
+  @media screen and(min-width: $l-breakpoint) {
+    font-size: $s-font-size-desktop;
+  }
+}
