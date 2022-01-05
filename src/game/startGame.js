@@ -2,6 +2,7 @@ import { checkIfGameStarted } from "./createGameBoards";
 import { setTimer, stopTimer } from "./gameTimer";
 import { displayModal } from "./gameOverModal";
 import { getResult } from "./gameResult";
+import { saveMatchResult } from "../highscores/highscoresState";
 
 const PLAYER_BOARD = document.querySelector(".board__fields--computer");
 export const START_GAME_BTN = document.querySelector(".button--start");
@@ -23,4 +24,5 @@ export const finishGame = () => {
   stopTimer();
   const { settlement = "", result = "", userPoints = "" } = getResult();
   displayModal(settlement, result, userPoints);
+  saveMatchResult(result, +userPoints);
 };
