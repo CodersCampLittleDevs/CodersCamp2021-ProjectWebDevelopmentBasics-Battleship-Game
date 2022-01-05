@@ -1,12 +1,11 @@
-import { setTimer, stopTimer } from "./gameTimer";
-import { getResult } from "./gameResult";
-import { displayModal } from "./gameOverModal";
 import { createGameBoards, checkIfGameStarted } from "./createGameBoards";
 import { addShipsToBoard } from "./randomizationOfShipsPositions";
 import { generateShipsArray } from "./shipsArray";
-import { startGame, isGameStarted, START_GAME_BTN } from "./startGame";
+import { startGame, START_GAME_BTN } from "./startGame";
 import { makeFieldsTargetable } from "./playerShooting";
 import { setDataInStorage } from "../utils/localStorage/localStorage";
+import { setGameboardPlayername } from "./setPlayerName";
+
 import "../styles.scss";
 import { addEasterEgg } from "../easterEgg/easterEgg";
 import "./game.scss";
@@ -23,6 +22,7 @@ export let computerShips;
 export let computerEmptyFields;
 addEasterEgg();
 createGameBoards();
+setGameboardPlayername();
 
 RANDOMIZE_BTN.addEventListener("click", function () {
   [playerEmptyFields, playerShips] = addShipsToBoard(true);
